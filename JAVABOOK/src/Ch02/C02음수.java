@@ -61,7 +61,7 @@ public class C02음수 {
 
 	public static void main(String[] args) {
 		
-		System.out.println("TEST");
+		System.out.println("TEST!!!!!!!!!!!!!!!!!!!!!!!");
 
 	}
 }
