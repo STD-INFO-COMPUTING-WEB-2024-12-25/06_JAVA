@@ -54,13 +54,12 @@ public class C04자료형 {
 		//float : 4byte 실수(6-9자리)
 		//doblue : 8byte 실수(15-18자리),기본자료형
 		
-//		//정밀도 확인
+		//정밀도 확인
 //		float n1 = 0.123456789123456789F; //f,F:float형 접미사
 //		double n2 = 0.123456789123456789;
 //		
 //		System.out.println(n1);
 //		System.out.println(n2);
-
 		//오차 확인
 //		float num = 0.1F;
 //		for(int i=0;i<=1E5;i++) {
@@ -89,18 +88,18 @@ public class C04자료형 {
 //		System.out.println((char)ch4);
 //		System.out.println(ch4); // 011000011
 		
-//		char ch5  = 0xac93;
-//		char ch6 = 0b1010110010010011;
+//		char ch5  = 0xac00;
+//		char ch6 = 44032;
 //		
 //		System.out.println(ch5);
 //		System.out.println(ch6);
-//		System.out.println((char)(0b1010110010010011+1));
+//		System.out.println((char)(0b1010110000000000+1));
 		 
 //		char ch6 = 0xac00+1;
 //		System.out.printf("%c %c\n", ch5,ch6);
 //		
-		// \\u :유니코드값 이스케이프문자
-//		System.out.printf("%c\n", '\uAC93');
+//		// \\u :유니코드값 이스케이프문자
+//		System.out.printf("%c\n", '\uACa1');
 		
 //		System.out.printf("TEST : %c\n", '\uabcd');
 		
@@ -126,29 +125,24 @@ public class C04자료형 {
 //		byte n2 = 20;
 //		char n3 = 40;
 //		
-		
-		
 //		String name = "홍길동";
 //		String job = "프로그래머";
 //		System.out.println(name);
 //		System.out.println(job);
-		
-	
-		 
 
 		//--------------------
 		//boolean : 논리형(true/false 저장)
 		//--------------------
 		
-		boolean flag = (10>11); 	// 참(긍정)
-		if(flag) 
-		{
-			System.out.println("참인경우 실행");
-		}
-		else 
-		{
-			System.out.println("거짓인경우 실행");
-		}
+//		boolean flag = (10>11); 	// 참(긍정)
+//		if(flag) 
+//		{
+//			System.out.println("참인경우 실행");
+//		}
+//		else 
+//		{
+//			System.out.println("거짓인경우 실행");
+//		}
 		
 	}
 
