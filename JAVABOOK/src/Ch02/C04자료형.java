@@ -55,11 +55,11 @@ public class C04자료형 {
 		//doblue : 8byte 실수(15-18자리),기본자료형
 		
 		//정밀도 확인
-		float n1 = 0.123456789123456789F; //f,F:float형 접미사
-		double n2 = 0.123456789123456789;
-		
-		System.out.println(n1);
-		System.out.println(n2);
+//		float n1 = 0.123456789123456789F; //f,F:float형 접미사
+//		double n2 = 0.123456789123456789;
+//		
+//		System.out.println(n1);
+//		System.out.println(n2);
 		//오차 확인
 //		float num = 0.1F;
 //		for(int i=0;i<=1E5;i++) {
