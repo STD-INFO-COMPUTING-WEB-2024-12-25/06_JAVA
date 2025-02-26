@@ -40,14 +40,12 @@ public class C03Percent {
 		 */
 
 		// 난수생성
-		
-
-		Random rnd = new Random();
-		
-		while (true) {
-			System.out.println(rnd.nextInt(45)  + 1); //N%5 과 동일 (0~44)
-			Thread.sleep(500);
-		}
+//		Random rnd = new Random();
+//		
+//		while (true) {
+//			System.out.println(rnd.nextInt(45)  + 1); //N%5 과 동일 (0~44)
+//			Thread.sleep(500);
+//		}
 
 		// 02 Math.random();
 //		while (true) {
@@ -57,17 +55,17 @@ public class C03Percent {
 //		}
 
 		// 04 끝자리수
-//		int num = 56789;
-//
-//		System.out.println("오른쪽 끝 1자리 : " + (num % 10));
-//		System.out.println("오른쪽 끝 2자리 : " + (num % 100));
-//		System.out.println("오른쪽 끝 3자리 : " + (num % 1000));
-//		System.out.println("오른쪽 끝 4자리 : " + (num % 10000));
-//		System.out.println();
-//		System.out.println("왼쪽 끝 1자리 : " + (num / 10000));
-//		System.out.println("왼쪽 끝 2자리 : " + (num / 1000));
-//		System.out.println("왼쪽 끝 3자리 : " + (num / 100));
-//		System.out.println("왼쪽 끝 4자리 : " + (num / 10));
+		int num = 56789;
+
+		System.out.println("오른쪽 끝 1자리 : " + (num % 10));
+		System.out.println("오른쪽 끝 2자리 : " + (num % 100));
+		System.out.println("오른쪽 끝 3자리 : " + (num % 1000));
+		System.out.println("오른쪽 끝 4자리 : " + (num % 10000));
+		System.out.println();
+		System.out.println("왼쪽 끝 1자리 : " + (num / 10000));
+		System.out.println("왼쪽 끝 2자리 : " + (num / 1000));
+		System.out.println("왼쪽 끝 3자리 : " + (num / 100));
+		System.out.println("왼쪽 끝 4자리 : " + (num / 10));
 		
 		//정수 하나를 입력받아 거꾸로 저장해보세요(반복문법 이후 풀어보기)%,/연산 동시이용할 것
 		//예
