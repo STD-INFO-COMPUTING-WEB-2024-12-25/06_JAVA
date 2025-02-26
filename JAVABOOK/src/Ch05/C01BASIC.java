@@ -19,14 +19,11 @@ public class C01BASIC {
 //		두수를 입력 받아 두수의 합/차/곱을 출력하는 프로그램을 만들어보세요
 //		Scanner 를 사용합니다
 
-		
-
 		//-------------------------
 		//대입 연산자
 		//-------------------------
 		//LV = RV;
 		//공간 = 값(우선 처리);		
-		
 		
 		
 
@@ -39,8 +36,6 @@ public class C01BASIC {
 //		a *= 3; // a = a*3;
 //		System.out.println("a="+a);
 
-		
-		
 		//-------------------------
 		//비교 연산자
 		//-------------------------
@@ -52,8 +47,7 @@ public class C01BASIC {
 //		System.out.println("A >= B : "+ (a >= b));
 //		System.out.println("A <= B : "+ (a <= b));
 //		System.out.println("A != B : "+ (a != b));
-		
-		
+	
 		
 		
 		//-------------------------
@@ -79,8 +73,7 @@ public class C01BASIC {
 //		System.out.println("true AND false = " + (true && false));
 //		System.out.println("true AND true =  " + (false && false));
 
-		
-		
+
 		
 		//-------------------------
 		//논리 부정 연산자
@@ -94,8 +87,6 @@ public class C01BASIC {
 //		play = !play;
 //		System.out.println(play);
 		
-
-
 
 		//-------------------------
 		//증감연산자
@@ -117,9 +108,6 @@ public class C01BASIC {
 //		int score = 85;
 //		char grade = (score > 90) ? 'A' : ((score > 80) ? 'B' : 'C');
 //		System.out.println(score + "점은 " + grade + "등급입니다.");
-		
-		
-	}
 
 	}
 
