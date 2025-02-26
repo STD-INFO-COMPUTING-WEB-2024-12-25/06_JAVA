@@ -28,7 +28,7 @@ public class C01BASIC {
 		
 
 		//-------------------------
-		//복합 대입 연산자
+		//복합 대입 연산자(기본 산술연산 + 대입)
 		//-------------------------
 //		int a = 10;
 //		a += 10; //a = a + 10;
@@ -47,8 +47,8 @@ public class C01BASIC {
 //		System.out.println("A >= B : "+ (a >= b));
 //		System.out.println("A <= B : "+ (a <= b));
 //		System.out.println("A != B : "+ (a != b));
-	
 		
+	
 		
 		//-------------------------
 		//논리 연산자
@@ -72,6 +72,12 @@ public class C01BASIC {
 //		System.out.println("false AND true = " + (false && true));
 //		System.out.println("true AND false = " + (true && false));
 //		System.out.println("true AND true =  " + (false && false));
+		
+//		int n1 = 100;
+//		int n2 = 200;
+//		boolean n3 = (n1<100) && (n2++>0);
+//		System.out.printf("%d %d %b\n",n1,n2,n3);
+		
 
 
 		
@@ -86,6 +92,9 @@ public class C01BASIC {
 //
 //		play = !play;
 //		System.out.println(play);
+//		
+
+		
 		
 
 		//-------------------------
@@ -94,7 +103,7 @@ public class C01BASIC {
 		//++a(--a) : 전치 연산자 : 먼저 값 1증가(1감소) 이후 다른 연산자 처리
 		//a++(a--) : 후치 연산자 : 다른 연산자 처리 먼저 한 후 1증가(1감소)
 //		int a = 10, b = 10, c, d=0;
-		
+//		
 //		c = --a + b++;
 //		d = a-- + ++b;
 //		System.out.printf("a=%d , b=%d , c=%d, d=%d", a, b, c, d);
@@ -105,10 +114,12 @@ public class C01BASIC {
 		//삼항 연산자
 		//-------------------------
 		// (조건식)? 참인경우 실행코드 : 거짓인경우 실행코드;		
-//		int score = 85;
-//		char grade = (score > 90) ? 'A' : ((score > 80) ? 'B' : 'C');
-//		System.out.println(score + "점은 " + grade + "등급입니다.");
+		int score = 85;
+		char grade = (score > 90) ? 'A' : ((score > 80) ? 'B' : 'C');
+		System.out.println(score + "점은 " + grade + "등급입니다.");
 
 	}
+	
+
 
 }
