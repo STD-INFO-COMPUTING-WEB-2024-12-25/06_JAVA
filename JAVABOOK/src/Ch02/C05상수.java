@@ -25,8 +25,8 @@ public class C05상수 {
 		double result = PI*4*4;
 //		
 //		 
-//		double a = 1e-3;
-//		System.out.println(a);
+		double a = 1e-3;
+		System.out.println(a);
 	}
 
 }
