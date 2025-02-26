@@ -4,8 +4,7 @@ public class C05상수 {
 
 	public static void main(String[] args) {
 		//상수 : 항상 같은 수 
-		
-		
+			
 		//리터럴 상수 : 이름부여x , 상수 Pool에 저장 , 단순한 수치,값
 		//심볼릭 상수 : 이름부여O , final 예약어 사용
 		
@@ -25,8 +24,16 @@ public class C05상수 {
 		double result = PI*4*4;
 //		
 //		 
+<<<<<<< HEAD
 		double a = 1e-3;
 		System.out.println(a);
+=======
+//		double a = 1e-3;
+//		System.out.println(a);
+		
+		
+		
+>>>>>>> 6ca8c7ff3e8ebb4405741ecb703631cba44b4368
 	}
 
 }
