@@ -27,7 +27,7 @@ Double.parseDouble() : 문자열을 실수 double로 변환
 [예시]
 ----------------------------
 byte byteValue = 10;
-char charValute = 'A';
+char charValue = 'A';
 ----------------------------
 1) int intValue = byteValue;
 2) int intValue = charValue;
