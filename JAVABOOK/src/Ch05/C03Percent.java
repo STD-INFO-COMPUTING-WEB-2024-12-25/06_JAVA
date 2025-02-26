@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class C03Percent {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// %연산자
 
 		// 01 홀수/짝수
@@ -15,9 +15,9 @@ public class C03Percent {
 
 //		Scanner sc = new Scanner(System.in);
 //		int num1 = sc.nextInt();
-		
-		//String result =  (num1%2==0)?"짝수입니다":"홀수입니다";
-		//System.out.println("결과 : " + result);
+//		
+//		String result =  (num1%2==0)?"짝수입니다":"홀수입니다";
+//		System.out.println("결과 : " + result);
 
 		// 02 배수 구하기
 
@@ -40,22 +40,23 @@ public class C03Percent {
 		 */
 
 		// 난수생성
-		Random rnd = new Random();
+		
 
-//		Random rnd = new Random();
-//		while (true) {
-//			System.out.println(rnd.nextInt(5)); //N%5 과 동일 (0~4)
-//			Thread.sleep(500);
-//		}
+		Random rnd = new Random();
+		
+		while (true) {
+			System.out.println(rnd.nextInt(45)  + 1); //N%5 과 동일 (0~44)
+			Thread.sleep(500);
+		}
 
 		// 02 Math.random();
 //		while (true) {
-//			System.out.println((int)(Math.random()*100)%16);
+//			System.out.println( (int)(Math.random()*100)%45 + 1 );
+////			System.out.println((int)(Math.random()*100)%16);
 //			Thread.sleep(500);
 //		}
 
 		// 04 끝자리수
-
 //		int num = 56789;
 //
 //		System.out.println("오른쪽 끝 1자리 : " + (num % 10));
