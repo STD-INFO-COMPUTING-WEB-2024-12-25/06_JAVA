@@ -12,33 +12,10 @@ Scanner : 키보드로부터 입력받는 장치 생성에 필요한 클래스 �
 --------------------------------------------------------
 1 Scanner 를 이용해서 키보드로 입력한 두수를 덧셈하여 결과를 출력해보세요
 
-[예시]
-----------------------------
-Scanner scanner = new Scanner(System.in);
-
-System.out.print("첫번째 수 : ");
-String strNum1=scanner.nextLine();
-
-System.out.print("두번째 수 : ");
-String strNum2=scanner.nextLine();
-
-int num1 = Integer.parseInt(strNum1);
-int num2 = Integer.parseInt(strNum2);
-
-int result = num1 + num2;
-System.out.println("덧셈 결과 : " + result);
-----------------------------
 
 
 2 Scanner를 이용해서 이름, 주미번호 앞 6자리 , 전화번호를 키보드에서
 입력받고 출력하는 코드를 작성해보세요
-
-Scanner sc = new Scanner(System.in);
-String name = sc.next();
-String id = sc.next();
-String phone = sc.next();
-
-System.out.printf("%s %s %s\n",name,id,phone);
 
 [예시]
 ----------------------------
