@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
   <diagram id="t4iyJ-2K-X9mLFhjT-cI" name="페이지-1">
-    <mxGraphModel dx="1595" dy="1145" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
+    <mxGraphModel dx="1389" dy="1017" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -514,7 +514,7 @@
         <mxCell id="3Y2qNAMYO-wNbByZRbtN-187" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="3Y2qNAMYO-wNbByZRbtN-186" target="3Y2qNAMYO-wNbByZRbtN-136">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="3Y2qNAMYO-wNbByZRbtN-186" value="로그인 페이지로 전환" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="3Y2qNAMYO-wNbByZRbtN-186" value="로그인 페이지로 전환&lt;div&gt;(Redirect)&lt;/div&gt;" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="-116" y="3703" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="3Y2qNAMYO-wNbByZRbtN-188" value="" style="edgeStyle=none;curved=0;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3Y2qNAMYO-wNbByZRbtN-182" target="3Y2qNAMYO-wNbByZRbtN-186">
@@ -529,8 +529,26 @@
         <mxCell id="3Y2qNAMYO-wNbByZRbtN-189" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;MESSAGE&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;회원가입을 완료했습니다&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
           <mxGeometry x="120" y="3660" width="140" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="3Y2qNAMYO-wNbByZRbtN-190" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;MESSAGE&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&amp;nbsp;PW 의 복잡도 여부 등등&lt;/div&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="-350" y="3330" width="140" height="60" as="geometry" />
+        <mxCell id="3Y2qNAMYO-wNbByZRbtN-192" value="YES" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-65" y="3450" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3Y2qNAMYO-wNbByZRbtN-193" value="MESSAGE" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-370" y="3270" width="160" height="138" as="geometry" />
+        </mxCell>
+        <mxCell id="3Y2qNAMYO-wNbByZRbtN-194" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;패스워드가 일치하지 않습니다&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="3Y2qNAMYO-wNbByZRbtN-193">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="3Y2qNAMYO-wNbByZRbtN-197" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;전화번호를 010 부터 시작합니다&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="3Y2qNAMYO-wNbByZRbtN-193">
+          <mxGeometry y="52" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="3Y2qNAMYO-wNbByZRbtN-198" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;상세주소를 입력하세요&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="3Y2qNAMYO-wNbByZRbtN-193">
+          <mxGeometry y="78" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="3Y2qNAMYO-wNbByZRbtN-199" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;기타 등등...&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="3Y2qNAMYO-wNbByZRbtN-193">
+          <mxGeometry y="104" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="3Y2qNAMYO-wNbByZRbtN-195" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="3Y2qNAMYO-wNbByZRbtN-193">
+          <mxGeometry y="130" width="160" height="8" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
