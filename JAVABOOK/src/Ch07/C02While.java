@@ -124,30 +124,199 @@ public class C02While {
 		
 		
 		//N단 - M단(N<M , N<9 , M<9)
+		
+//		Scanner sc = new Scanner(System.in);
+//		System.out.print("단 수 입력(시작단수 끝단수) : " );
+//		int n = sc.nextInt();
+//		int m = sc.nextInt();
+//		
+//		//(N<9) (M<9)
+//		while(n>9 || n<2 || m>9 || m<2) {
+//			System.out.println("[!] 값범위[2-9]를 초과하였습니다" );
+//			System.out.print("단 수 입력(시작단수 끝단수) : " );
+//			n = sc.nextInt();	
+//			m = sc.nextInt();
+//		}
+//		
+//		//N>M
+//		while(n>m) {
+//			int tmp = n;
+//			n = m;
+//			m = tmp;	
+//		}
+//		
+//		int dan = n;
+//		while(dan<m+1) {
+//			
+//			int i=1;
+//			while(i<10) {
+//				System.out.printf("%d x %d = %d\n", dan,i,dan*i);
+//				i++;
+//			}
+//			System.out.println();
+//			
+//			dan++;
+//		}
+		
+		
+		
+		// 
+//		System.out.println();	//줄바꿈(개행)
+//		System.out.print("*");	//별찍기
 
 		
 		//별찍기(기본높이:4)
-		
-
+				
 		//*****
 		//*****
 		//*****
 		//*****
 	
+//		i(개행)		j(별)
+//		0		0-4
+//		1		0-4
+//		2		0-4
+//		3		0-4
+//		-----------------------------
+//		i=0		j=0	
+//		i++		j++
+//		i<4		j<5	
+		
+			
+//		int i=0;
+//		while(i<4) {
+//			
+//			int j=0;
+//			while(j<5) {
+//				System.out.print("*");
+//				j++;
+//			}
+//			System.out.println();
+//			i++;
+//		}
+		
+		
+		//높이 : h
+		//*****
+		//*****
+		//*****
+		//*****
+		
+//		높이 : h
+//		i(개행)		j(별)
+//		0		0-4
+//		1		0-4
+//		2		0-4
+//		3		0-4
+//		h
+//		-----------------------------
+//		i=0		j=0	
+//		i++		j++
+//		i<h+1		j<5
+		
+//		Scanner sc = new Scanner(System.in);
+//		int h = sc.nextInt();
+//		
+//		int i=0;
+//		while(i<h+1) {
+//			
+//			int j=0;
+//			while(j<5) {
+//				System.out.print("*");
+//				j++;
+//			}
+//			System.out.println();
+//			i++;
+//		}
+		
+//		i(개행)		j(별)
+//		0		0-0
+//		1		0-1
+//		2		0-2
+//		3		0-3	
+//		--------------------------------
+//		i=0		j=0
+//		i++		j++
+//		i<4		j<i+1
 	
 		
 		//*
 		//**
 		//***
 		//****
+		
+//		int i=0;
+//		while(i<4) {
+//			int j=0;
+//			while(j<i+1) {	
+//				System.out.print("*");
+//				j++;
+//			}
+//			System.out.println();
+//			i++;
+//		}
+		
+		
+//		높이 : h
+//		*
+//		**
+//		***
+//		****
+//
+//		i(개행)		j(별)
+//		0		0-0
+//		1		0-1
+//		2		0-2
+//		3		0-3
+//		..
+//		h-1		0-(h-1)
+//		-------------------------------
+//		i=0		j=0
+//		i++		j++
+//		i<h		j<i+1
+
+//		Scanner sc = new Scanner(System.in);
+//		int h = sc.nextInt();
+//		
+//		int i=0;
+//		while(i<h) {
+//			int j=0;
+//			while(j<i+1) {	
+//				System.out.print("*");
+//				j++;
+//			}
+//			System.out.println();
+//			i++;
+//		}	
 
 		
 		//****
 		//***
 		//**
 		//*
-		
+//		i(개행)	j(별)
+//		0		0-3
+//		1		0-2
+//		2		0-1
+//		3		0-0
+//		-----------------------------
+//		i=0		j=0
+//		i++		j++
+//		i<4		j<4-i
 
+		
+		int i=0;
+		while(i<4) {
+			
+			int j=0;
+			while(j<4-i) {
+				System.out.print("*");
+				j++;
+			}
+			System.out.println();
+			i++;
+		}
+		
 		
 		//   *
 		//  ***
