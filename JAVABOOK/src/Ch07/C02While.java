@@ -578,13 +578,37 @@ public class C02While {
 		
 		
 		
-		int i=0;
-		while(i<7) {
+		
+//		i(행)		j(공백)		k(별)
+//		0		0-2				0-0
+//		1		0-1				0-2
+//		2		0-0				0-4
+//		3		x				0-6
+//		-----------------------------------------
+//		i<=(h/2)	j=0			k=0
+//					j++			k++
+//					j<(h/2)-i	k<=2*i
+//
+//		4			0-0				0-4
+//		5			0-1				0-2
+//		6			0-2				0-0
+//		-----------------------------------------
+//					j=0				k=0
+//					j++				k++
+//					j<=i-(h/2+1)	k<=((h-1)*2)-2*i
+				
 			
-			if(i<4) {
+		Scanner sc = new Scanner(System.in);
+		int h = sc.nextInt();
+		
+		
+		int i=0;
+		while(i<h) {
+			
+			if(i<=(h/2)) {
 				//공백(↓)
 				int j=0;
-				while(j<3-i) {
+				while(j<(h/2)-i) {
 					System.out.print(" ");
 					j++;
 				}
@@ -599,16 +623,18 @@ public class C02While {
 				
 				//공백(↑)
 				int j=0;
-				while(j<=i-4) {
+				while(j<=i-(h/2+1)) {
 					System.out.print(" ");
 					j++;
 				}	
 				//별(↓)
+				
 				int k=0;
-				while(k<= 12-2*i) {
+				while(k<=((h-1)*2)-2*i) {
 					System.out.print("*");
 					k++;
 				}
+				
 			}
 			
 			System.out.println();
