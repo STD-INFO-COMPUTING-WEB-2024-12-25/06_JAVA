@@ -11,15 +11,28 @@ public class C05StringClass {
 //		System.out.printf("%x\n",System.identityHashCode(str2));
 //		System.out.printf("%x\n",System.identityHashCode(str3));
 //		System.out.printf("%x\n",System.identityHashCode(str4));
+		
+//		int i=0;
+//		String str  = "";
+//		while(i<10) {
+//			str +=i;
+//			System.out.print("str : " + str + " ");
+//			System.out.printf("위치 : %x\n",System.identityHashCode(str));
+//			i++;
+//		}
+		
+		//문자열 덧붙이기(메모리 누수 방지 클래스 : StringBuffer , StringBuilder)
+		
 		int i=0;
-		String str  = "";
+//		String str  = "";
+		StringBuilder str = new StringBuilder("");
 		while(i<10) {
-			str +=i;
+//			str +=i;
+			str.append(i);
 			System.out.print("str : " + str + " ");
 			System.out.printf("위치 : %x\n",System.identityHashCode(str));
 			i++;
 		}
-	
 		
 	}
 }
