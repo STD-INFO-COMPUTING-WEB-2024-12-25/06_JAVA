@@ -1,9 +1,28 @@
 package Ch08;
 
-public class C09Ex {
-	//package Ch08Ex;
+
+class TV{
+	String brandName;
+	int year;
+	int inch;
 	//
-	//public class C00문제 {
+	public TV(String brandName, int year, int inch) {
+		super();
+		this.brandName = brandName;
+		this.year = year;
+		this.inch = inch;
+	}
+	//
+	void show() {
+		//LG에서 만든 2017년형 32인치 TV
+		System.out.printf("%s 에서 만든 %d년형 %d인치 TV\n", this.brandName,this.year,this.inch);
+	}
+	
+}
+public class C09Ex {
+	// package Ch08Ex;
+	//
+	// public class C00문제 {
 //		--------------------------------------------
 //		문제 - 이것이자바다
 //		--------------------------------------------
@@ -25,4 +44,12 @@ public class C09Ex {
 //		--------------------------------------------
 //		https://iu-corner.tistory.com/entry/JAVA-%EC%9E%90%EB%B0%94-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%97%B0%EC%8A%B5-%EB%AC%B8%EC%A0%9C-%EB%AA%A8%EC%9D%8C-1
 	//
+
+	public static void main(String[] args) {
+		TV myTV = new TV("LG", 2017, 32); //LG에서 만든 2017년형 32인치 TV
+		myTV.show();
+	}
 }
+
+
+

@@ -1,0 +1,25 @@
+package Ch09;
+
+public class C05StringClass {
+	public static void main(String[] args) {
+//		String str1 = "Java Powerful";
+//		String str2 = new String("java Programming");
+//		String str3 = str1 + str2;
+//		String str4 = str1.concat(str2);
+//		
+//		System.out.printf("%x\n",System.identityHashCode(str1));
+//		System.out.printf("%x\n",System.identityHashCode(str2));
+//		System.out.printf("%x\n",System.identityHashCode(str3));
+//		System.out.printf("%x\n",System.identityHashCode(str4));
+		int i=0;
+		String str  = "";
+		while(i<10) {
+			str +=i;
+			System.out.print("str : " + str + " ");
+			System.out.printf("위치 : %x\n",System.identityHashCode(str));
+			i++;
+		}
+	
+		
+	}
+}
