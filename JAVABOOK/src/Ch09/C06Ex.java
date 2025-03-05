@@ -36,8 +36,8 @@ public class C06Ex {
 		System.out.println(hong.toString());
 		System.out.println("길동 포함여부 : " + hong.isContain("길동"));	//true
 		System.out.println("컴퓨터 포함여부 : " + hong.isContain("컴퓨터"));	//true
-		System.out.println("프로필 일치여부 : " + hong.equals("홍길동,대구,프로그래머,컴퓨터공학"));//false
-		System.out.println("프로필 일치여부 : " + hong.equals("홍길동,울산,프로그래머,컴퓨터공학"));//false
+		System.out.println("프로필 일치여부 : " + hong.isEquals("홍길동,대구,프로그래머,컴퓨터공학"));//false
+		System.out.println("프로필 일치여부 : " + hong.isEquals("홍길동,울산,프로그래머,컴퓨터공학"));//false
 
 	}
 
