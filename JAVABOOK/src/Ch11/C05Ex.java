@@ -1,5 +1,17 @@
 package Ch11;
 
+
+
+class ShopService{
+	private static ShopService instance;
+	private ShopService() {};
+	static ShopService getInstance() {
+		if(instance==null)
+			instance = new ShopService();
+		return instance;
+	}	
+}
+
 public class C05Ex {
 	public static void main(String[] args) {
 		//---------------------------------------
