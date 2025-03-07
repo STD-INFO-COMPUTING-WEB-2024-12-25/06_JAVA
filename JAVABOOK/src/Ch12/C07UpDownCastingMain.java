@@ -110,44 +110,69 @@ class G extends C {
 }
 
 public class C07UpDownCastingMain {
-	
-	public static void UpDownCastTestFunc(A obj,int ...arg) {
+
+	public static void UpDownCastTestFunc(A obj, int... arg) {
 		// A-G 를 받아 모든 속성 출력
-		
-		
-		obj.a=arg[0];
-		
-		if(obj instanceof B) {
-			B down = (B)obj;	//Downcasting(확장된 멤버에 접근위해)
-			down.b=arg[1];	
-		}else if(obj instanceof C) {
-			C down = (C)obj;	//Downcasting(확장된 멤버에 접근위해)
-			down.c=arg[1];
+
+		obj.a = arg[0];
+
+		if (obj instanceof B) {
+			B down = (B) obj; // Downcasting(확장된 멤버에 접근위해)
+			down.b = arg[1];
 		}
-		//나머지 else if문 만들어보세요 -!
-		
+
+		if (obj instanceof C) {
+			C down = (C) obj; // Downcasting(확장된 멤버에 접근위해)
+			down.c = arg[1];
+		}
+
+		if (obj instanceof D) {
+			D down = (D) obj; // Downcasting(확장된 멤버에 접근위해)
+			down.b = arg[1];
+			down.d = arg[2];
+		}
+
+		if (obj instanceof E) {
+			E down = (E) obj; // Downcasting(확장된 멤버에 접근위해)
+			down.b = arg[1];
+			down.e = arg[2];
+		}
+
+		if (obj instanceof F) {
+			F down = (F) obj; // Downcasting(확장된 멤버에 접근위해)
+			down.c = arg[1];
+			down.f = arg[2];
+		}
+		if (obj instanceof G) {
+			G down = (G) obj; // Downcasting(확장된 멤버에 접근위해)
+			down.c = arg[1];
+			down.g = arg[2];
+		}
+
+		// 나머지 else if문 만들어보세요 -!
+
 		System.out.println(obj);
-		
+
 	}
+
 	public static void main(String[] args) {
-			
-			A ob1 = new A(0);
-			B ob2 = new B(0,0);
-			C ob3 = new C(0,0);
-			D ob4 = new D(0,0,0);
-			E ob5 = new E(0,0,0);
-			F ob6 = new F(0,0,0);
-			G ob7 = new G(0,0,0);
-			
-			UpDownCastTestFunc(ob1,10);				//No-casting
-			UpDownCastTestFunc(ob2,10,20);			//Upcasting
-			UpDownCastTestFunc(ob3,30,40);			//Upcasting
-			UpDownCastTestFunc(ob4,50,60,70);		//Upcasting
-			UpDownCastTestFunc(ob5,80,90,100);		//Upcasting
-			UpDownCastTestFunc(ob6,110,120,130);	//Upcasting
-			UpDownCastTestFunc(ob7,140,150,160);	//Upcasting
-			
-			
+
+		A ob1 = new A(0);
+		B ob2 = new B(0, 0);
+		C ob3 = new C(0, 0);
+		D ob4 = new D(0, 0, 0);
+		E ob5 = new E(0, 0, 0);
+		F ob6 = new F(0, 0, 0);
+		G ob7 = new G(0, 0, 0);
+
+		UpDownCastTestFunc(ob1, 10); // No-casting
+		UpDownCastTestFunc(ob2, 10, 20); // Upcasting
+		UpDownCastTestFunc(ob3, 30, 40); // Upcasting
+		UpDownCastTestFunc(ob4, 50, 60, 70); // Upcasting
+		UpDownCastTestFunc(ob5, 80, 90, 100); // Upcasting
+		UpDownCastTestFunc(ob6, 110, 120, 130); // Upcasting
+		UpDownCastTestFunc(ob7, 140, 150, 160); // Upcasting
+
 	}
 
 }
