@@ -27,10 +27,11 @@ public class Sum implements Calculation {
 
 	
 	public void sum(String ...arg) {
-		String sum = "";
-		for(String str : arg) {
-			sum += str;
+		String sum = arg[0];
+		for( int i = 1; i<arg.length; i++) {
+			sum = sum + " + " + arg[i]  ;
 		}
+		
 		System.out.println(sum);
 	}
 	
