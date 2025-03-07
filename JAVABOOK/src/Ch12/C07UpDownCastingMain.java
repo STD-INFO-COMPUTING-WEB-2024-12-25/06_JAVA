@@ -139,13 +139,13 @@ public class C07UpDownCastingMain {
 			F ob6 = new F(0,0,0);
 			G ob7 = new G(0,0,0);
 			
-//			UpDownCastTestFunc(ob1,10);				//No-casting
-//			UpDownCastTestFunc(ob2,10,20);			//Upcasting
-//			UpDownCastTestFunc(ob3,30,40);			//Upcasting
-//			UpDownCastTestFunc(ob4,50,60,70);		//Upcasting
-//			UpDownCastTestFunc(ob5,80,90,100);		//Upcasting
-//			UpDownCastTestFunc(ob6,110,120,130);	//Upcasting
-//			UpDownCastTestFunc(ob7,140,150,160);	//Upcasting
+			UpDownCastTestFunc(ob1,10);				//No-casting
+			UpDownCastTestFunc(ob2,10,20);			//Upcasting
+			UpDownCastTestFunc(ob3,30,40);			//Upcasting
+			UpDownCastTestFunc(ob4,50,60,70);		//Upcasting
+			UpDownCastTestFunc(ob5,80,90,100);		//Upcasting
+			UpDownCastTestFunc(ob6,110,120,130);	//Upcasting
+			UpDownCastTestFunc(ob7,140,150,160);	//Upcasting
 			
 			
 	}
