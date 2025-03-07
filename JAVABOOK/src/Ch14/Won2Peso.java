@@ -1,23 +1,22 @@
 package Ch14;
 
-public class Won2Peso extends Converter{
+public class Won2Peso extends Converter {
 
-	
 	public Won2Peso() {
 		super();
 	}
-	
+
 	public Won2Peso(double ratio) {
 		super();
-		this.ratio =ratio;
-		
+		this.ratio = ratio;
+
 	}
 
 	@Override
 	protected double convert(double src) {
 		// TODO Auto-generated method stub
-		
-		return Math.round((src/ratio)*100)/100.0;
+
+		return Math.round((src / ratio) * 100) / 100.0;
 	}
 
 	@Override

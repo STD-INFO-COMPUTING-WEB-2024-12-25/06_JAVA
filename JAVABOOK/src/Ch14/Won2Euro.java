@@ -1,17 +1,16 @@
 package Ch14;
 
-class Won2Euro extends Converter{
+class Won2Euro extends Converter {
 
 	public Won2Euro(double ratio) {
 		super();
 		this.ratio = ratio;
 	}
 
-	
 	@Override
 	protected double convert(double src) {
 		// TODO Auto-generated method stub
-		return Math.round(src/ratio);
+		return Math.round(src / ratio);
 	}
 
 	@Override
@@ -23,11 +22,7 @@ class Won2Euro extends Converter{
 	@Override
 	protected String getDestString() {
 		// TODO Auto-generated method stub
-		return "유로";	//유로는 1563원
+		return "유로"; // 유로는 1563원
 	}
 
-	
-	
-	
 }
-

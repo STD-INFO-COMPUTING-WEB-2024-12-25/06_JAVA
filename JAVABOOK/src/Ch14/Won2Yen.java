@@ -2,34 +2,18 @@ package Ch14;
 
 import java.util.Scanner;
 
-abstract class Converter {
-	abstract protected double convert(double src); // 추상 메소드
+class Won2Yen extends Converter {
 
-	abstract protected String getSrcString(); // 추상 메소드
-
-	abstract protected String getDestString(); // 추상 메소드
-
-	protected double ratio; // 비율
-
-	public void run() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println(getSrcString() + "을 " + getDestString() + "로 바꿉니다.");
-		System.out.print(getSrcString() + "을 입력하세요>> ");
-		double val = scanner.nextDouble();
-		double res = convert(val);
-		System.out.println("변환 결과: " + res + getDestString() + "입니다");
-		scanner.close();
-	}
-}
-
-class Won1Yen extends Converter {
-
-	public Won1Yen() {
+	public Won2Yen() {
 		super();
 	}
 
-	public Won1Yen(double ratio) {
+	public Won2Yen(double ratio) {
 		this.ratio = ratio;
+	}
+	
+	public Won2Yen(int ratio) {
+		this.ratio = (double)ratio;
 	}
 
 	@Override
@@ -53,11 +37,3 @@ class Won1Yen extends Converter {
 }
 
 
-public class Won2Yen {
-	public static void main(String[] args) {
-		// 1조 : 원 -> 엔화
-		Won1Yen toYen = new Won1Yen(10); // 1엔화는 10원
-		toYen.run();
-	}
-
-}
