@@ -1,5 +1,7 @@
 package Ch13.Team_interface.일조;
 
-public class Div {
+public class Div  implements Calculation{
+
+
 
 }
