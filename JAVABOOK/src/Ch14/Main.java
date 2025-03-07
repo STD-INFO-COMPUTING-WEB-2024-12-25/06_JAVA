@@ -10,7 +10,7 @@ public class Main {
 			Won2Yen toYen = new Won2Yen(1446); // 1달러는 1446원
 			toYen.run();
 			//2조 : 원 -> 유로
-			Won2Euro toEuro = new Won2Euro(1446); // 1달러는 1446원
+			Won2Euro toEuro = new Won2Euro(1563); // 1달러는 1446원
 			toEuro.run();
 			//3조 : 원 -> 위안
 			Won2Yuan  toYuan  = new Won2Yuan (1446); // 1달러는 1446원
