@@ -1,4 +1,4 @@
-package Ch14;
+package Ch13.Team_abstract;
 
 public class Main {
 	public static void main(String[] args) {
@@ -11,6 +11,7 @@ public class Main {
 //			toEuro.run();
 
 			//3조 : 원 -> 위안
+
 //			Won2Yuan  toYuan  = new Won2Yuan(1446); // 1달러는 1446원
 //			toYuan.run();
 			

@@ -1,39 +1,34 @@
-package Ch14;
+package Ch13.Team_abstract;
 
-import java.util.Scanner;
+public class Won2Peso extends Converter {
 
-class Won2Yen extends Converter {
-
-	public Won2Yen() {
+	public Won2Peso() {
 		super();
 	}
 
-	public Won2Yen(double ratio) {
+	public Won2Peso(double ratio) {
+		super();
 		this.ratio = ratio;
-	}
-	
-	public Won2Yen(int ratio) {
-		this.ratio = (double)ratio;
+
 	}
 
 	@Override
 	protected double convert(double src) {
 		// TODO Auto-generated method stub
-		return Math.round(src / ratio);
+
+		return Math.round((src / ratio) * 100) / 100.0;
 	}
 
 	@Override
 	protected String getSrcString() {
 		// TODO Auto-generated method stub
-		return "원";
+		return "원화";
 	}
 
 	@Override
 	protected String getDestString() {
 		// TODO Auto-generated method stub
-		return "엔";
+		return "페소";
 	}
 
 }
-
-
