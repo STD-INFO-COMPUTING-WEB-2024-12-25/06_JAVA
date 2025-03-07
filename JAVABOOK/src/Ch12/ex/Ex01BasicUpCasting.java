@@ -25,15 +25,6 @@ public class Ex01BasicUpCasting {
         // 2. 생성한 Dog 인스턴스를 Animal 타입으로 업캐스팅하세요
         // 3. 업캐스팅된 참조로 makeSound() 메서드를 호출해보세요
         // 4. 업캐스팅된 참조로 fetch() 메서드를 호출해보고 결과를 확인하세요
-        
-        // 답안 예시
-        Dog puppy = new Dog();
-        Animal animal1 = puppy;  // 업캐스팅
-        animal1.makeSound();     // 가능 (오버라이딩된 메서드)
-        //animal1.fetch();       // 불가능 (업캐스팅 후에는 자식 고유 메서드 접근 불가)
-        
-        // 실행 결과 예시:
-        // 멍멍!
-        // 컴파일 에러: fetch() 메서드는 Animal 타입에서 접근 불가
+ 
     }
 } 

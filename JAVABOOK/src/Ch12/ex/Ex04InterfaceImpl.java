@@ -32,22 +32,11 @@ public class Ex04InterfaceImpl {
         // 4. Instrument 클래스 타입으로 업캐스팅하고 play() 메서드를 호출해보세요
         // 5. 각 단계에서 tune() 메서드 호출을 시도해보세요
         
-        // 답안 예시
-        Piano piano1 = new Piano();
-        Playable player = piano1;  // 인터페이스로 업캐스팅
-        player.play();
-        //player.tune();  // 컴파일 에러
-        
-        Instrument instrument1 = piano1;  // 클래스로 업캐스팅
-        instrument1.play();
-        //instrument1.tune();  // 컴파일 에러
+
         
         // 실행 결과 예시:
         // 피아노를 연주합니다
         // 피아노를 연주합니다
-        
-        // 추가 실습: 다운캐스팅
-        Piano backToPiano = (Piano)player;  // 인터페이스에서 다운캐스팅
-        backToPiano.tune();  // 이제 가능
+
     }
 } 

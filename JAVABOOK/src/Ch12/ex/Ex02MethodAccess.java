@@ -27,14 +27,7 @@ public class Ex02MethodAccess {
         // 4. 업캐스팅된 참조로 turboBoost() 메서드 호출을 시도해보세요
         // 5. 다시 Car 타입으로 다운캐스팅한 후 turboBoost() 메서드를 호출해보세요
         
-        // 답안 예시
-        Car car1 = new Car();
-        Vehicle vehicle1 = car1;     // 업캐스팅
-        vehicle1.start();           // 가능 (오버라이딩된 메서드)
-        //vehicle1.turboBoost();    // 불가능 (업캐스팅 후에는 자식 고유 메서드 접근 불가)
-        
-        Car downcastedCar = (Car)vehicle1;  // 다운캐스팅
-        downcastedCar.turboBoost();  // 이제 가능
+
         
         // 실행 결과 예시:
         // 자동차의 시동을 겁니다
