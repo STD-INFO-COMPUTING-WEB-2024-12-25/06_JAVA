@@ -16,7 +16,7 @@ public class Main {
 			Won2Yuan  toYuan  = new Won2Yuan (1446); // 1달러는 1446원
 			toYuan .run();
 			//4조 : 원 -> 페소
-			Won2Peso  toDollar = new Won2Peso (1446); // 1달러는 1446원
+			Won2Peso  toPeso = new Won2Peso (25.2774); // 1달러는 1446원
 			toPeso .run();
 		
 	}
