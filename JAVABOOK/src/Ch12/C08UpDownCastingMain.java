@@ -34,9 +34,5 @@ public class C08UpDownCastingMain {
 		//재정의된 메서드 접근 가능? O X
 		
 		
-		
-		
-		
-		
 	}
 }
