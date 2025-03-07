@@ -7,22 +7,22 @@ public interface Calculation {
 	//나머지는 자유롭게 - !
 	void sum (int a,int b);
 	void sum (int a,int b,int c,int d,int e);
-	void sum (float a,float b,float c,float d);
+	void sum (double a,double b,double c,double d);
 	void sum (String a,String b,String c,String d);
 	
 	void sub (int a,int b);
 	void sub (int a,int b,int c,int d,int e);
-	void sub (float a,float b,float c,float d);
+	void sub (double a,double b,double c,double d);
 	void sub (String a,String b,String c,String d);
 	
 	void mul (int a,int b);
 	void mul (int a,int b,int c,int d,int e);
-	void mul (float a,float b,float c,float d);
+	void mul (double a,double b,double c,double d);
 	void mul (String a,String b,String c,String d);
 	
 	void div (int a,int b);
 	void div (int a,int b,int c,int d,int e);
-	void div (float a,float b,float c,float d);
+	void div (double a,double b,double c,double d);
 	void div (String a,String b,String c,String d);
 
 }
