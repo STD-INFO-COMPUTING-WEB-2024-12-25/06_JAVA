@@ -1,23 +1,16 @@
-package Ch14;
+package Ch13.Team_abstract;
 
-public class Won2Peso extends Converter{
+class Won2Euro extends Converter {
 
-	
-	public Won2Peso() {
+	public Won2Euro(double ratio) {
 		super();
-	}
-	
-	public Won2Peso(double ratio) {
-		super();
-		this.ratio =ratio;
-		
+		this.ratio = ratio;
 	}
 
 	@Override
 	protected double convert(double src) {
 		// TODO Auto-generated method stub
-		
-		return Math.round((src/ratio)*100)/100.0;
+		return Math.round(src / ratio);
 	}
 
 	@Override
@@ -29,7 +22,7 @@ public class Won2Peso extends Converter{
 	@Override
 	protected String getDestString() {
 		// TODO Auto-generated method stub
-		return "페소";
+		return "유로"; // 유로는 1563원
 	}
 
 }
