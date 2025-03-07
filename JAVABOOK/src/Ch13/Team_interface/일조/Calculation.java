@@ -23,7 +23,7 @@ public interface Calculation {
 	
 	void div (int a, int b);
 	void div (int a, int b, int c, int d, int e);
-	void div(double a, double b, double c, double d);
+	void div (double a, double b, double c, double d);
 	void div (String a, String b, String c, String d);
 	
 
