@@ -1,5 +1,7 @@
 package Ch13.Team_interface.삼조;
 
+import java.util.Iterator;
+
 public class Sum implements Calculation {
 
 	@Override
@@ -18,9 +20,9 @@ public class Sum implements Calculation {
 
 	@Override
 	public void sum(double... args) {
-		double sum = 0;
-		for (int i = 0; i < args.length; i++) {
-			sum += args[i];
+		double sum = 0;		
+		for(double arg:args) {
+			sum+=arg;
 		}
 		double roundedNumber = Math.round(sum * 100.0) / 100.0;
 		System.out.println(roundedNumber);
