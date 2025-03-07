@@ -37,10 +37,8 @@ public class Sub implements Calculation{
 	@Override
 	public void sub(int... arg) {
 
-			System.out.println(arg);
 			int sub2=0;
 			for(int item : arg) {
-				System.out.println(item);
 				sub2-=item;
 			}
 			System.out.println("n개 뺄셈 값 : " +sub2 );
@@ -49,11 +47,9 @@ public class Sub implements Calculation{
 
 	@Override
 	public void sub(double... arg) {
-		
-		System.out.println(arg);
+	
 		double sub3=0;
 		for(double item : arg) {
-			System.out.println(item);
 			sub3-=item;
 		}
 		System.out.println("n개 뺄셈 값 : " +sub3 );
@@ -63,10 +59,8 @@ public class Sub implements Calculation{
 	@Override
 	public void sub(String... arg) {
 		
-		System.out.println(arg);
 		String sub4="";
 		for(String item : arg) {
-			System.out.println(item);
 			sub4+="-"+item;
 		}
 		System.out.println("n개 뺄셈 값 : " +sub4 );
