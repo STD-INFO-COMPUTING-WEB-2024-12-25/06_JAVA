@@ -84,7 +84,15 @@ public class Mul implements Calculation{
 	@Override
 	//n개 문자열받아 '*'를 기준으로 문자열덧붙여 출력
 	public void mul(String... arg) {
-		
+		String mul = "";
+		for(String item:arg){
+			if(mul=="") {
+				mul+=item;
+			}else {
+				mul += ("*"+item);
+			}
+		}
+		System.out.println(mul);
 	}
 
 	@Override
