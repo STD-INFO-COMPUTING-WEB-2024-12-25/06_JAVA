@@ -13,9 +13,9 @@ public class Sum implements Calculation{
 	@Override//n개 인자 받아 덧셈 화면 출력
 	public void sum(int... args) {
 		int result =0;
-		for (int sum : args) {
+		for (int num : args) {
 			
-			result += sum;
+			result += num;
 		}
 		System.out.println(result);
 			
@@ -24,14 +24,21 @@ public class Sum implements Calculation{
 
 	@Override
 	public void sum(double... args) {
-		// TODO Auto-generated method stub
+		double result  =0.0;
+		for(double num : args) {
+			
+			result += num;
+			
+		}
+		System.out.println(result);
+		
 		
 	}
 
-	@Override
+	@Override //n개 문자열받아 '+'를 기준으로 문자열덧붙여 출력
 	public void sum(String... args) {
-		// TODO Auto-generated method stub
 		
+		for(String)
 	}
 
 	@Override
@@ -46,7 +53,7 @@ public class Sum implements Calculation{
 		
 	}
 
-	@Override
+	@Override 
 	public void sub(double... args) {
 		// TODO Auto-generated method stub
 		
