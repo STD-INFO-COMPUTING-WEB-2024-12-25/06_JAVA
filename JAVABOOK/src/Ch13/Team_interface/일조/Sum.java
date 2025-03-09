@@ -1,30 +1,36 @@
 package Ch13.Team_interface.일조;
 
-class Sum implements Calculation{
+public class Sum implements Calculation{
 
-	@Override
+	@Override //2개 인자 받아 덧셈 화면 출력
 	public void sum(int a, int b) {
-		int sum1 = a+ b;
-		System.out.println(sum1);
+		int sum =0;
+		sum = a + b;
+		System.out.println(sum);
+		
+	}
+
+	@Override//n개 인자 받아 덧셈 화면 출력
+	public void sum(int... args) {
+		int result =0;
+		for (int sum : args) {
+			
+			result += sum;
+		}
+		System.out.println(result);
+			
 		
 	}
 
 	@Override
-	public void sum(int a, int b, int c, int d, int e) {
-		int sum2 = a + b + c + d + e;
-		System.out.println(sum2);
+	public void sum(double... args) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
-	public void sum(double a, double b, double c, double d) {
-		double sum3 = a + b + c + d;
-		System.out.println(sum3);
-	}
-
-	@Override
-	public void sum(String a, String b, String c, String d) {
-		String sum4 = a + b + c+ d;
-		System.out.println(sum4);
+	public void sum(String... args) {
+		// TODO Auto-generated method stub
 		
 	}
 
@@ -35,19 +41,19 @@ class Sum implements Calculation{
 	}
 
 	@Override
-	public void sub(int a, int b, int c, int d, int e) {
+	public void sub(int... args) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void sub(double a, double b, double c, double d) {
+	public void sub(double... args) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void sub(String a, String b, String c, String d) {
+	public void sub(String... args) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -59,19 +65,19 @@ class Sum implements Calculation{
 	}
 
 	@Override
-	public void mul(int a, int b, int c, int d, int e) {
+	public void mul(int... args) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void mul(double a, double b, double c, double d) {
+	public void mul(double... args) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void mul(String a, String b, String c, String d) {
+	public void mul(String... args) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -83,22 +89,24 @@ class Sum implements Calculation{
 	}
 
 	@Override
-	public void div(int a, int b, int c, int d, int e) {
+	public void div(int... args) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void div(double a, double b, double c, double d) {
+	public void div(double... args) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void div(String a, String b, String c, String d) {
+	public void div(String... args) {
 		// TODO Auto-generated method stub
 		
 	}
+
+
 
 	
 		
