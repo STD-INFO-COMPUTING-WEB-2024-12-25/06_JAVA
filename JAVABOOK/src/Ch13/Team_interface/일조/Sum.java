@@ -12,12 +12,12 @@ public class Sum implements Calculation{
 
 	@Override//n개 인자 받아 덧셈 화면 출력
 	public void sum(int... args) {
-		int result =0;
-		for (int num : args) {
+		int sum =0;
+		for (int sum : args) {
 			
-			result += num;
+			sum += sum;
 		}
-		System.out.println(result);
+		System.out.println(sum);
 			
 		
 	}
@@ -37,8 +37,8 @@ public class Sum implements Calculation{
 
 	@Override //n개 문자열받아 '+'를 기준으로 문자열덧붙여 출력
 	public void sum(String... args) {
+		String result = arg[0];
 		
-		for(String)
 	}
 
 	@Override
