@@ -15,29 +15,36 @@ public class Sum implements Calculation{
 		int sum =0;
 		for (int num : args) {
 			
-			sum += sum;
+			sum += num;
 		}
 		System.out.println(sum);
 			
 		
 	}
 
-	@Override
+	@Override //n개 인자 받아 덧셈 화면 출력
 	public void sum(double... args) {
-		double result  =0.0;
+		double sum  =0.0;
 		for(double num : args) {
 			
-			result += num;
+			sum += num;
 			
 		}
-		System.out.println(result);
+		System.out.println(sum);
 		
 		
 	}
 
 	@Override //n개 문자열받아 '+'를 기준으로 문자열덧붙여 출력
 	public void sum(String... args) {
-		String result = arg[0];
+		StringBuilder str = new StringBuilder();
+		for(int i =0; i<args.length; i++) {
+			str.append(args[i]);
+			if(i<args.length - 1) {
+				str.append("+");
+			}
+			System.out.println(str);
+		}
 		
 	}
 
