@@ -29,7 +29,6 @@ public class Sub implements Calculation{
 	@Override
 	public void sub(int x, int y) {
 	
-		
 		System.out.println(x-y);
 		
 	}
