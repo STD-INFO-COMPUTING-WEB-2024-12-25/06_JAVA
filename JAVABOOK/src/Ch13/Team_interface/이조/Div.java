@@ -82,18 +82,18 @@ public class Div implements Calculation {
 
 	@Override
 	public void div(int... arg) {
-		int div = 1;
-		for(int n : arg) {
-			div /= n;
+		int div = arg[0];
+		for(int i = 1; i <arg.length;i++) {
+			div /= arg[i];
 		}
 		System.out.println(div);
 	}
 
 	@Override
 	public void div(double... arg) {
-		double div = 1;
-		for(double n : arg) {
-			div /= n;
+		double div = arg[0];
+		for(int i = 1; i < arg.length; i++) {
+			div /= arg[i];
 		}
 		System.out.println(div);
 	}
