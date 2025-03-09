@@ -13,7 +13,7 @@ public class Sum implements Calculation{
 	@Override//n개 인자 받아 덧셈 화면 출력
 	public void sum(int... args) {
 		int sum =0;
-		for (int sum : args) {
+		for (int num : args) {
 			
 			sum += sum;
 		}
