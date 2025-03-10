@@ -8,7 +8,11 @@ class Cat extends Animal{}
 public class C03ClassCastExceptionMain {
 	
 	public static void changeDog(Animal animal) {
+		try {
 			Dog down = (Dog)animal;
+		}catch(ClassCastException e) {
+			System.out.println("예외발생 : " + e.getMessage());
+		}
 	}
 	
 	public static void main(String[] args) {
