@@ -74,6 +74,7 @@ class C06GUI extends JFrame implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
+
 //		System.out.println("클릭!");
 		if(e.getSource()==btn1) {
 			System.out.println("파일로 저장 클릭");
@@ -84,6 +85,7 @@ class C06GUI extends JFrame implements ActionListener{
 		}else if(e.getSource()==input) {
 			System.out.println("입력");
 		}
+	
 		
 	}
 	
