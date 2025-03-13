@@ -7,11 +7,11 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
 import java.io.Writer;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -133,15 +133,50 @@ class C08GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 					try {out.close();} catch (IOException e1) {e1.printStackTrace();}
 				}
 			}
-				
-
-
-			
-			
-			
+					
 			
 		} else if (e.getSource() == btn2) {
+			
 			System.out.println("불러오기");
+			//파일탐색기 열기
+			JFileChooser fileChooser = new JFileChooser();
+			fileChooser.setDialogTitle("파일을 선택하세요");
+			fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		 
+			File defaultDirPath = new File("C:\\IOTEST");
+			if(defaultDirPath.exists())
+				fileChooser.setCurrentDirectory(defaultDirPath);
+			
+	
+			int selectedVal = fileChooser.showSaveDialog(null);
+			System.out.println("selectedVal : " + selectedVal);
+			if(selectedVal == JFileChooser.APPROVE_OPTION) {
+				File selectedFile = fileChooser.getSelectedFile();
+				System.out.println("selectedFile : " + selectedFile);
+				
+				try {
+					
+					Reader fin =new FileReader(selectedFile.toString()); 
+					StringBuffer buffer = new StringBuffer();
+					while(true) {
+						int data = fin.read();
+						if(data==-1) 
+							break;
+						buffer.append((char)data);
+					}
+					area1.setText("");
+					area1.append(buffer.toString());
+					fin.close();
+				}catch(Exception e1) {
+					e1.printStackTrace();
+				}
+				
+				
+			}
+			
+			
+			
+			
 		} else if (e.getSource() == btn3) {
 			System.out.println("대화기록보기");
 		} else if (e.getSource() == input) {
