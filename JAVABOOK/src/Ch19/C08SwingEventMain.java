@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
@@ -97,24 +98,44 @@ class C08GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 			
 			//파일탐색기 열기
 			JFileChooser fileChooser = new JFileChooser();
+			fileChooser.setDialogTitle("파일 저장 위치를 선택하세요");
+			fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+			
+			File defaultDirPath = new File("C:\\IOTEST");
+			if(defaultDirPath.exists())
+				fileChooser.setCurrentDirectory(defaultDirPath);
 			
 			int selectedVal = fileChooser.showSaveDialog(null);
+			System.out.println("selectedVal : " + selectedVal);
 			
-			
-			String dirPath = "C:\\IOTEST\\";
-			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
-			String filename = LocalDateTime.now().format(formatter);
-			
-			try {
-				out = new FileWriter(dirPath+filename+".txt");
-				out.write(contents);
-				out.flush();
-			}catch(Exception e1) {
-				e1.printStackTrace();
-			
-			}finally {
-				try {out.close();} catch (IOException e1) {e1.printStackTrace();}
+			if(selectedVal == JFileChooser.APPROVE_OPTION) {
+				File selectedFile = fileChooser.getSelectedFile();
+				System.out.println("selectedFile : " + selectedFile);
+				
+				//파일확장자 추가
+				String filePath = selectedFile.toString();
+				if(!selectedFile.toString().endsWith(".txt")) {
+					filePath = selectedFile.toString()+".txt";
+				}
+				System.out.println("filePath : " + filePath);
+				
+//				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+//				String filename = LocalDateTime.now().format(formatter);
+				
+				try {
+					out = new FileWriter(filePath);
+					out.write(contents);
+					out.flush();
+				}catch(Exception e1) {
+					e1.printStackTrace();
+				
+				}finally {
+					try {out.close();} catch (IOException e1) {e1.printStackTrace();}
+				}
 			}
+				
+
+
 			
 			
 			
