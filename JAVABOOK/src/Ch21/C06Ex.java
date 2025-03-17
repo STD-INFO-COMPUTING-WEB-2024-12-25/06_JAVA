@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 class ChargeStation {
 	private int no;
@@ -116,7 +115,7 @@ public class C06Ex {
 				System.out.print(rs.getString("행정구역")+ "\t");
 				System.out.print(rs.getString("지사")+ "\t");
 				System.out.print(rs.getString("시설명")+ "\t");
-				System.out.print(rs.getString("우편번호")+ "\t");
+				System.out.print(rs.getInt("우편번호")+ "\t");
 				System.out.print(rs.getString("주소")+ "\n");
 			}
 		}
@@ -142,8 +141,30 @@ public class C06Ex {
 		freeConnection(pstmt);
 	}
 
-	public static void Update() throws Exception {
+	public static void Update(ChargeStation obj) throws Exception {
 		// 수정
+		String query ="update charge_station set 행정구역=?,"
+				+ "지사=?,시설명=?,우편번호=?,주소=? where 순번=?";
+		System.out.println(query);
+		pstmt = conn.prepareStatement(query);
+
+		pstmt.setString(1, obj.getSection());	//행정구역
+		pstmt.setString(2, obj.getStation());	//지사
+		pstmt.setString(3, obj.getName());	//시설명
+		pstmt.setInt(4, obj.getZipcode());	//우편번호
+		pstmt.setString(5, obj.getAddress());	//주소
+		pstmt.setInt(6, obj.getNo());	//순번
+	
+		int result =  pstmt.executeUpdate();
+		
+		if(result>0)
+			System.out.println("[INFO] UPDATE 성공!");
+		else 
+			System.out.println("[INFO] UPDATE 실패!");
+		
+		freeConnection(pstmt);
+		
+		
 	}
 
 	public static void Delete() throws Exception {
@@ -170,10 +191,13 @@ public class C06Ex {
 			
 			Select();		//전체조회
 //			SelectOne();	//단건조회
-//			Update();		//수정
+//			Update(new ChargeStation(201, "울산광역시", "울산지사", "울산가스", 10101, "울산"));		//수정
+			
+			
 //			Delete();		//단건삭제
 //			
 
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
