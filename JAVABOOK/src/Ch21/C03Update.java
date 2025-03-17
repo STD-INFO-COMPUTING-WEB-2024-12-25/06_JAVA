@@ -24,6 +24,27 @@ public class C03Update {
 			System.out.println("Driver Loading Success...");
 			conn = DriverManager.getConnection(url,id,pw);
 			System.out.println("DB CONNECTED...");
+			
+			// SQL 쿼리 준비(!)
+			String name =args[0];
+			int age = Integer.parseInt(args[1]);
+			String addr = args[2];
+			pstmt=conn.prepareStatement("update tbl_std set age=?,addr=? where name=?");
+			pstmt.setInt(1, age);
+			pstmt.setString(2,addr);
+			pstmt.setString(3, name);
+			
+//			pstmt=conn.prepareStatement("insert into tbl_std values('"+name+"',"+age+",'"+addr+"')");
+			
+			
+			// SQL 실행
+			int result =  pstmt.executeUpdate();
+			
+			if(result>0)
+				System.out.println("UPDATE 성공");
+			else
+				System.out.println("UPDATE 실패");
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {	
