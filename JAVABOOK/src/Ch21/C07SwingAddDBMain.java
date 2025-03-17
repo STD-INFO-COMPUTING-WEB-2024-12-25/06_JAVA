@@ -17,6 +17,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -28,6 +32,45 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.text.BadLocationException;
 
+
+class Memo{
+	private int id;
+	private String text;
+	private LocalDateTime createdAt;
+	Memo(){}
+	public Memo(int id, String text, LocalDateTime createdAt) {
+		super();
+		this.id = id;
+		this.text = text;
+		this.createdAt = createdAt;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getText() {
+		return text;
+	}
+	public void setText(String text) {
+		this.text = text;
+	}
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+	@Override
+	public String toString() {
+		return "Memo [id=" + id + ", text=" + text + ", createdAt=" + createdAt + "]";
+	}
+	//toString
+	//getter and setter
+	//모든 인자생성자
+	//디폴트 생성자
+}
 
 class C07GUI extends JFrame implements ActionListener, KeyListener, MouseListener {
 	JButton btn1;
@@ -255,6 +298,34 @@ class C07GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 		}
 		else if (e.getSource() == btn6) {
 			//전체 조회 가져와서 CONSOLE에 출력
+			
+			try {
+				//SQL 준비
+				pstmt = conn.prepareStatement("select * from tbl_memo");
+				
+				//SQL 실행
+				List<Memo> list = new ArrayList();
+				Memo memo;
+				rs =  pstmt.executeQuery();
+				if(rs!=null) {
+					while(rs.next()) {
+						memo = new Memo();
+						memo.setId(rs.getInt("id"));
+						memo.setText(rs.getString("text"));
+						Timestamp timestamp = rs.getTimestamp("createdAt");
+						memo.setCreatedAt(timestamp.toLocalDateTime());
+						list.add(memo);
+					}
+				}
+				list.forEach(System.out::println);
+				
+			}catch(Exception e3) {
+				e3.printStackTrace();
+			}finally {
+				try {rs.close();}catch(Exception e2) {}
+				try {pstmt.close();}catch(Exception e2) {}
+			}
+			
 		}
 		
 		else if (e.getSource() == input) 
