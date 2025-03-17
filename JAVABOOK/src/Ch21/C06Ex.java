@@ -112,12 +112,15 @@ public class C06Ex {
 		rs =  pstmt.executeQuery();
 		if(rs!=null) {
 			while(rs.next()) {
-				System.out.print(rs.getString("name")+ " ");
-				System.out.print(rs.getInt("age")+ " ");
-				System.out.print(rs.getString("addr")+ "\n");
+				System.out.print(rs.getInt("순번")+ " ");
+				System.out.print(rs.getString("행정구역")+ "\t");
+				System.out.print(rs.getString("지사")+ "\t");
+				System.out.print(rs.getString("시설명")+ "\t");
+				System.out.print(rs.getString("우편번호")+ "\t");
+				System.out.print(rs.getString("주소")+ "\n");
 			}
 		}
-		
+		freeConnection(pstmt,rs);
 	}
 
 	public static void Insert(ChargeStation obj) throws Exception {
