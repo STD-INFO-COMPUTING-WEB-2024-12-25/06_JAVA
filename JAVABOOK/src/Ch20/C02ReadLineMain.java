@@ -8,7 +8,7 @@ public class C02ReadLineMain {
 	
 	public static void main(String[] args) throws Exception{
 		
-//		Writer out = new FileWriter("c:\\tmp_io\\test2.txt");
+//		Writer out = new FileWriter("c:\\IOTEST\\test2.txt");
 //		BufferedWriter bout = new BufferedWriter(out);	
 //		PrintWriter pout = new PrintWriter(bout);
 //		pout.println("HELLO");
@@ -18,7 +18,7 @@ public class C02ReadLineMain {
 //		pout.close();
 		
 		
-		Reader in = new FileReader("c:\\tmp_io\\test2.txt");
+		Reader in = new FileReader("c:\\IOTEST\\test2.txt");
 		BufferedReader bin = new BufferedReader(in);
 		
 		while(true) {

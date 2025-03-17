@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 class Board implements Serializable{
+	
 	private static final long serialVersionUID = 1L;
 	
 	private int bno;
@@ -69,7 +70,7 @@ public class C04ObjectStreamMain {
 	
 	public static void main(String[] args) throws Exception{
 		
-//		FileOutputStream out = new FileOutputStream("c:\\tmp_io\\board.db");
+//		FileOutputStream out = new FileOutputStream("c:\\IOTEST\\board.db");
 //		ObjectOutputStream oout = new ObjectOutputStream(out);
 //		oout.writeObject(new Board(1,"제목1","하2","홍길동",new Date()));;
 //		oout.writeObject(new Board(2,"제목2","하3","남길동",new Date()));;
@@ -78,16 +79,17 @@ public class C04ObjectStreamMain {
 //		out.close();
 		
 		//
-		FileInputStream in = new FileInputStream("c:\\tmp_io\\board.db");
+		FileInputStream in = new FileInputStream("c:\\IOTEST\\board.db");
 		ObjectInputStream oin = new ObjectInputStream(in);
 
  		Object obj =  oin.readObject();
 		Board down = (Board)obj;
 		System.out.println(down);
- 		Object obj2 =  oin.readObject();
+ 		
+		Object obj2 =  oin.readObject();
 		Board down2 = (Board)obj2;
 		System.out.println(down2);
-		//더이상 읽을것이 없으면 java.io.EOFException 발생 
+//		//더이상 읽을것이 없으면 java.io.EOFException 발생 
  		Object obj3 =  oin.readObject();
 		Board down3 = (Board)obj3;
 		System.out.println(down3);
