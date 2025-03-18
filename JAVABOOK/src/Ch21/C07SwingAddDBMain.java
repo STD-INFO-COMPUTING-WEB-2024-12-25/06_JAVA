@@ -73,12 +73,14 @@ class Memo{
 	//디폴트 생성자
 }
 
-class SelectFrame extends JFrame implements MouseListener {
+class SelectFrame extends JFrame implements MouseListener,ActionListener {
 	
 	C07GUI mainUi;
 	JTable table;
 	JScrollPane scroll;
 	JPanel panel;
+	JButton btn1;
+	String selectedText;
 	SelectFrame(C07GUI mainUi){
 		super("SELECT 결과");
 		this.mainUi = mainUi;
@@ -90,7 +92,13 @@ class SelectFrame extends JFrame implements MouseListener {
 		panel = new JPanel();
 		panel.setLayout(null);
 		
+		//
+		btn1 = new JButton("선택");
+		btn1.setBounds(410,10,70,30);
+		btn1.addActionListener(this);
 
+		panel.add(btn1);
+		
 		//frame(panel)
 		add(panel);
 		
@@ -163,8 +171,9 @@ class SelectFrame extends JFrame implements MouseListener {
 	}
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		System.out.println("CLICKED..");
-		
+		int selectedRow = table.getSelectedRow();
+		selectedText = table.getValueAt(selectedRow, 1).toString();
+		System.out.println("CLICKED.." + selectedText);
 	}
 	@Override
 	public void mousePressed(MouseEvent e) {
@@ -184,6 +193,16 @@ class SelectFrame extends JFrame implements MouseListener {
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==btn1) {
+			//mainUI에 selectedText를 전달
+			mainUi.area1.setText(selectedText);
+			//현재프레임은 종료
+//			dispose();
+		}
 		
 	}
 	
