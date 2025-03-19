@@ -2,16 +2,15 @@ package Ch25;
 
 import java.io.DataInputStream;
 
-public class ServerRecvThread  implements Runnable{
+public class ClientRecvThread implements Runnable{
 
 	//InputStream
 	DataInputStream din;
-	Sgui gui;
-	ServerRecvThread(DataInputStream din,Sgui gui){
+	Cgui gui;
+	ClientRecvThread(DataInputStream din,Cgui gui){
 		this.din = din;
 		this.gui = gui;
 	}
-	
 	
 	@Override
 	public void run() {
@@ -22,17 +21,15 @@ public class ServerRecvThread  implements Runnable{
 				recv = din.readUTF();
 				if(recv.equals("q"))
 					break;
-//				System.out.println("[CLIENT ] : " + recv);			
-				gui.area.append("[CLIENT] "+recv+"\n");
+//				System.out.println("[SERVER ] : " + recv);
+				gui.area.append("[SERVER] : " + recv+"\n");
 			}
 		}catch(Exception e) {
-			System.out.println("[EXCEPTION] 예외발생 ServerRecvThread 종료");
-			e.printStackTrace();
+			System.out.println("[EXCEPTION] 예외발생 ClientRecvThread 종료");	
 		}finally {
 			try {din.close();}catch(Exception e2) {}
 		}	
 		
 	}
-	
 
 }
