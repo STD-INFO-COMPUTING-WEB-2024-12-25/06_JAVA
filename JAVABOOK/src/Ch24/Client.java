@@ -10,7 +10,7 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class Client {
-	public static void main(String[] args) throws UnknownHostException, IOException {
+	public static void main(String[] args) throws UnknownHostException, IOException, InterruptedException {
 		
 		Socket client = new Socket("192.168.16.203",7002);	
 		
@@ -22,28 +22,25 @@ public class Client {
 		InputStream in = client.getInputStream();
 		DataInputStream din = new DataInputStream(in);
 		
-		//내용교환(q:종료)
-		Scanner sc = new Scanner(System.in);
-		String recv=null;
-		String send=null;
-		
-		while(true) {
-			//CLIENT->SERVER (수신)
-			recv = din.readUTF();
-			if(recv.equals("q"))
-				break;
-			System.out.println("[SERVER ] : " + recv);	
-			
-			//SERVER->CLIENT (송신)
-			System.out.print("[CLIENT(q:종료)] :");
-			send=sc.nextLine();
-			if(send.equals("q")) {
-				break;
-			}
-			dout.writeUTF(send);
-			dout.flush();
 
-		}
+		//
+		//
+		ClientSendThread send = new ClientSendThread(dout);
+		ClientRecvThread recv = new ClientRecvThread(din);
+		
+		//
+		Thread th1 = new Thread(send);
+		Thread th2 = new Thread(recv);
+		
+		//
+		th1.start();
+		th2.start();
+		
+		th1.join();
+		th2.join();
+		
+		//
+		
 		din.close();
 		dout.close();
 		in.close();
