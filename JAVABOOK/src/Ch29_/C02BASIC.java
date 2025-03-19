@@ -45,25 +45,26 @@ public class C02BASIC {
 
 	public static void main(String[] args) throws Exception {
 		//reflect로  매서드 사용하기
-		Simple ob = new Simple();
-		ob.setAge(10);
-
-		System.out.println(Simple.class);
-		Class<?> clazz = Class.forName( String.valueOf(Simple.class).split(" ")[1] );
-		Method method = clazz.getDeclaredMethod("getAge", null);
-		Object result = method.invoke(ob,null);
-		System.out.println(result);
+//		Simple ob = new Simple();
+//		ob.setAge(10);
+//
+//		System.out.println(Simple.class);
+//		
+//		Class<?> clazz = Class.forName( String.valueOf(Simple.class).split(" ")[1] );
+//		Method method = clazz.getDeclaredMethod("getAge", null);
+//		Object result = method.invoke(ob,null);
+//		System.out.println(result);
 		
-		//reflect로 생성자 사용하기
-		Constructor<?> constructor = clazz.getConstructor(String.class); //인자1 개받는 생성자
-		System.out.println(constructor);
-		Object obj =  constructor.newInstance("홍길동");
-		System.out.println(obj);
-		
-		//reflect로 field에 값넣기
-		Field field = clazz.getDeclaredField("addr");
-		field.set(ob, "대구");
-		System.out.println(ob);
+//		//reflect로 생성자 사용하기
+//		Constructor<?> constructor = clazz.getConstructor(String.class); //인자1 개받는 생성자
+//		System.out.println(constructor);
+//		Object obj =  constructor.newInstance("홍길동");
+//		System.out.println(obj);
+//		
+//		//reflect로 field에 값넣기
+//		Field field = clazz.getDeclaredField("addr");
+//		field.set(ob, "대구");
+//		System.out.println(ob);
 		
 	}
 

@@ -1,5 +1,6 @@
 package Ch29_;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
 
@@ -22,9 +23,9 @@ public class C01BASIC {
 //		}
 		
 		//모든 메서드 확인
-		Method [] methods = clazz.getDeclaredMethods();
-		for(Method m : methods)
-			System.out.println(m);
+//		Method [] methods = clazz.getDeclaredMethods();
+//		for(Method m : methods)
+//			System.out.println(m);
 		
 	
 
