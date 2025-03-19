@@ -7,11 +7,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
 
 public class Server {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InterruptedException {
 		// 서버 소켓 생성
 		ServerSocket server = new ServerSocket(7002); // 192.168.16.203:7000
 		System.out.println("[INFO] SERVER SOCKET LISTENING");
@@ -27,31 +26,28 @@ public class Server {
 		InputStream in = client.getInputStream();
 		DataInputStream din = new DataInputStream(in);
 		
-		//내용교환(q:종료)
-		Scanner sc = new Scanner(System.in);
-		String recv=null;
-		String send=null;
-		while(true) {
-			//SERVER->CLIENT (송신)
-			System.out.print("[SERVER(q:종료)] :");
-			send=sc.nextLine();
-			if(send.equals("q")) {
-				break;
-			}
-			dout.writeUTF(send);
-			dout.flush();
-			//CLIENT->SERVER (수신)
-			recv = din.readUTF();
-			if(recv.equals("q"))
-				break;
-			System.out.println("[CLIENT ] : " + recv);	
-		}
-		din.close();
-		dout.close();
+		//
+		ServerSendThread send = new ServerSendThread(dout);
+		ServerRecvThread recv = new ServerRecvThread(din);
+		
+		//
+		Thread th1 = new Thread(send);
+		Thread th2 = new Thread(recv);
+		
+		//
+		th1.start();
+		th2.start();
+		
+		th1.join();
+		th2.join();
+		
+
+		// 자원제거
 		in.close();
 		out.close();
 		client.close();
 		server.close();
+		
 		System.out.println("[SERVER] 연결 종료합니다");
 		
 		
