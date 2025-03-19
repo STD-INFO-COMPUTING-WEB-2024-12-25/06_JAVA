@@ -38,9 +38,7 @@ public class ServerBackground {
 				Thread th = new Thread(recv);
 				th.start();
 				
-			}
-			
-			
+			}	
 			
 		}catch(Exception e) {
 			e.printStackTrace();
