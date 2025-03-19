@@ -99,6 +99,10 @@ class Cgui extends JFrame implements ActionListener,KeyListener
 				
 				//2 필드의 내용 삭제
 				txt1.setText("");
+				
+				//스크롤를 맨 아래로 이동
+				area.setCaretPosition(area.getDocument().getLength());
+				
 			}catch(Exception e2) {
 				e2.printStackTrace();
 			}
