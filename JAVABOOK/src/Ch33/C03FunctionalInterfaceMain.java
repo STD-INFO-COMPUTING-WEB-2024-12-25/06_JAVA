@@ -3,6 +3,7 @@ package Ch33;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 //제공되는 함수형 인터페이스들
 //Function<T, R>:
@@ -34,9 +35,16 @@ public class C03FunctionalInterfaceMain {
 	//04
 	public static Function< List<Object>, Integer> func4=(li)->{
 		//List<Object>로 받은 파라미터 중에 Integer만 추출해서 누적합 구하기
-		//1 Interger형만 필터링(instanceof)
-		//2 누적합 (reduce) 리턴
-		return -1;	
+
+		return li.stream()
+			.filter((item)->{return item instanceof Integer;})		//1 Interger형만 필터링(instanceof)
+			.map((item)->{ 
+//				System.out.println(item);
+				return (Integer)item;
+			})														//자료형 재구성(Object ->Integer)
+			.reduce(0,(sum,item)->{return sum+item;});				//2 누적합 (reduce) 리턴
+			
+		
 	};
 	//05
 	public static Function< List<Object>, List<Integer> > func5=(li)->{
@@ -44,8 +52,42 @@ public class C03FunctionalInterfaceMain {
 		//1 Interger형만 필터링(instanceof)
 		//2 재구성(map)
 		//3 리스트로 변환(collect)
-		return null;
+		return li	.stream()
+					.filter((item)->item instanceof Integer)
+					.map((item)->(Integer)item)
+					.collect(Collectors.toList())
+					;
 	};
+	
+	//06
+	public static Function< Integer,Integer > func6= func1.andThen(func2);
+	//07
+	public static Function< Integer,Integer > func7= func2.andThen(func1);
+	//08
+	public static Function< List<Integer>,Integer > subFunc = (x)->{return x.stream().reduce(0, (sum,x1)->sum+x1);};
+	public static Function< List<Object>,Integer> func8 = func5.andThen(subFunc);
+	
+	//09 							func9.apply(10).apply(20));
+	
+	public static Function <Integer ,  Function<Integer,Integer>  > func9 = (x)->{
+									
+									//x == final
+									int n1 = 10;
+									System.out.println("첫번째 함수 호출! x : " + x);
+									
+									return (y)->{
+										//y not final
+										y++;
+										
+										System.out.println("두번째 함수 호출 y : " + y +" x :"+ x);
+										return y+x + n1;
+										
+									};
+								}; 
+	
+	public static Function<Integer ,Function<Integer,Integer>  > func10 = x-> y->x+y;
+	
+	public static Function<Integer ,Function<Integer, Function<Integer,Integer> >> func11 = x->y->z->x+y+z;
 	
 	public static void main(String[] args) {
 	
@@ -55,9 +97,22 @@ public class C03FunctionalInterfaceMain {
 		System.out.println(func2.apply(10));
 		//03
 		System.out.println(func3.apply( Arrays.asList(10,20,30,40) ));
+		//04
+		System.out.println(func4.apply(Arrays.asList("홍길동",100,20,300,10.5,true) ));
+		//05 
+		System.out.println(func5.apply(Arrays.asList("홍길동",100,20,300,10.5,true) ));
+		//06
+		System.out.println(func6.apply(5));
+		//07
+		System.out.println(func7.apply(5));		
+		//08
+		System.out.println(func8.apply(Arrays.asList("홍길동",100,20,300,10.5,true) ));	
 		
+		//09
+		System.out.println(func9.apply(10).apply(20)   );
 		
-		
+		//11
+		System.out.println(func11.apply(10).apply(20).apply(30));
 	}
 	
 
