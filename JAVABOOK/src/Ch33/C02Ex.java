@@ -1,5 +1,6 @@
 package Ch33;
 
+import java.util.Arrays;
 
 @FunctionalInterface
 interface Functional{
@@ -12,9 +13,23 @@ class Calc{
 	Functional div;	//나누기
 	Calc(){
 		//Functional sum 에 대한 스트림 & 람다식 완성 할 것
+		sum=(args)->Arrays.stream(args).reduce(0,(sum,el)->sum+el);
 		//Functional sub 에 대한 스트림 & 람다식 완성 할 것
+		sub=(args)->{
+			return Arrays
+						.stream(args)
+						.boxed()
+						.sorted((a,b)->{return b-a;})  
+						.reduce(0, (sub,el)->{return sub<el?el-sub:sub-el;});
+		};
 		//Functional mul 에 대한 스트림 & 람다식 완성 할 것
+		mul=(args)->{
+			return Arrays.stream(args).reduce(1, (mul,el)->mul*el); 
+			
+		};
+		
 		//Functional div 에 대한 스트림 & 람다식 완성 할 것
+		div=(args)->{return null; };
 		//조건
 		//sum,sub,mul,div 각각에 람다&스트림함수를 적절히 이용해서 기능 구현을 합니다
 		//모든 인자를 받을 수있는 가변인자 처리로 구현합니다
