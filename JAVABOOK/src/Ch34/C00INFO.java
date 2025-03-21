@@ -3,7 +3,7 @@ package Ch34;
 public class C00INFO {
 	//출처: https://ittrue.tistory.com/156 [IT is True:티스토리]
 	//	
-	//어노테이션이란? (Annotation)
+	//어노테이션이란? (Annotation) - @
 	//어노테이션은 다른 프로그램에게 유용한 정보를 제공하기 위해 사용되는 것으로 주석과 같은 의미를 가진다.
 	//어노테이션의 역할
 	//
