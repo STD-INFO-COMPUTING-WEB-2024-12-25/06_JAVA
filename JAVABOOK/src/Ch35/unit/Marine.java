@@ -33,6 +33,7 @@ public class Marine extends Unit{
 	@Override
 	public void underAttact(int damage) {
 		//amor-- 0 -> hp--> dead	
+		
 		if(amor-damage > 0) {
 			this.amor-=damage;
 		}
@@ -43,7 +44,7 @@ public class Marine extends Unit{
 			hp=0;
 			amor=0;
 			isDead=false;
-			System.out.println("전사했습니다...");
+			System.out.println(this.type + " 전사했습니다...");
 		}
 	}
 
