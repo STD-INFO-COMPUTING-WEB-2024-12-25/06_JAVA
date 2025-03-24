@@ -7,6 +7,7 @@ public abstract class Building {
 	public int sheld;	//보호막
 	public int amor;	//보호장비
 	public boolean isDestroyed;
+	
 	//건물짓기
 	abstract void buildStructure();
 	
