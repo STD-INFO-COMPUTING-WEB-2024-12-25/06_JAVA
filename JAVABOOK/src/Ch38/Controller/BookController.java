@@ -3,14 +3,16 @@ package Ch38.Controller;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BookController implements SubController {
+import Ch38.Domain.Dto.BookDto;
 
+public class BookController implements SubController {
+	Map<String, Object> response;
 	//C(1)R(2)U(3)D(4) 
 	@Override
 	public Map<String, Object> execute(Map<String, Object> params) {
 		System.out.println("[SC] BookController execute invoke..!");
 		//00 
-		Map<String, Object> response = new HashMap();
+		response = new HashMap();
 		Integer serviceNo =(Integer)params.get("serviceNo");
 		if(serviceNo==null) {
 			response.put("status", false);
@@ -21,6 +23,17 @@ public class BookController implements SubController {
 			case 1:			//C - 도서등록(ROLE-사서,관리자)
 				System.out.println("[SC] 도서등록 요청 확인");
 				//01 파라미터받기
+				String bookCode = (params.get("bookCode")!=null)?(String) params.get("bookCode"):null;
+				String bookName=(params.get("bookName")!=null)?(String) params.get("bookName"):null;
+				String publisher=(params.get("publisher")!=null)?(String) params.get("publisher"):null;
+				String isbn=(params.get("isbn")!=null)?(String) params.get("isbn"):null;
+				
+				BookDto bookDto = new BookDto(bookCode,bookName,publisher,isbn);
+				if(!isValid(bookDto)){
+					response.put("status", false);
+					return response;
+				}
+				
 				//02 유효성검증(Data Validation)
 				//03 관련 서비스 실행
 				//04 뷰로 이동(or 내용전달)
@@ -54,6 +67,23 @@ public class BookController implements SubController {
 
 		
 		return response;
+	}
+	//
+	private boolean isValid(BookDto bookDto) {
+//		유효성 체크(isValid) 함수 완성합니다
+//		ServiceNo  : 1
+//		bookCode 는 기본 8글자만 허용
+//		bookName 의 길이는 255자를 넘기면 안됩니다
+//
+//		필요하면 정규표현식(String.matchs("REG STRING"))
+//		이용해서 필터링 해보세요 - !
+
+		if(bookDto.getBookCode()==null || bookDto.getBookCode().length()!=8){ 
+			response.put("error","bookCode의 길이는 8자 이어야 합니다");
+			return false;
+		}
+		
+		return true;
 	}
 
 }

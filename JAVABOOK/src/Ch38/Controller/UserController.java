@@ -16,11 +16,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 import Ch38.Domain.Dto.UserDto;
+import Ch38.Domain.Service.UserServiceImpl;
 
 public class UserController implements SubController{
 	
+	//UserService
+	private UserServiceImpl userService ;
+	
 	Map<String, Object> response;
 	
+	public UserController(){
+		try {
+			userService= UserServiceImpl.getInstance();
+		}catch(Exception e) {
+			exceptionHandler(e);
+		}
+		
+	}
 	//C(1)R(2)U(3)D(4) + 로그인(5),로그아웃(6)
 	@Override
 	public Map<String, Object> execute(Map<String, Object> params) {
@@ -123,5 +135,17 @@ public class UserController implements SubController{
 		
 		return true;
 	}
+	//예외처리함수
+	public Map<String,Object> exceptionHandler(Exception e){
+		
+		if(response==null) response=new HashMap();
+		
+		response.put("status", false);
+		response.put("message", e.getMessage());
+		response.put("exception", e);
+		
+		return response;
+	}
+	
 
 }
