@@ -23,7 +23,7 @@ public class UserDaoImpl{
 	//싱글톤 패턴처리
 	private static UserDaoImpl instance;
 	private UserDaoImpl() throws SQLException, ClassNotFoundException {
-		
+		System.out.println("[DAO] UserDaoImpl init...");
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		conn = DriverManager.getConnection(url,id,pw);
 		System.out.println("UserDaoImpl DB Connection Success");

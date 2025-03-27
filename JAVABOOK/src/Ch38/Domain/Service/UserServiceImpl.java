@@ -13,7 +13,8 @@ public class UserServiceImpl {
 	//싱글톤 패턴
 	private static UserServiceImpl instance;
 	private UserServiceImpl() throws ClassNotFoundException, SQLException {
-		userDao = UserDaoImpl.getInstance();	
+		userDao = UserDaoImpl.getInstance();
+		System.out.println("[SERVICE] UserServiceImpl init...");
 	};
 	public static UserServiceImpl getInstance() throws ClassNotFoundException, SQLException {
 		if(instance==null)
