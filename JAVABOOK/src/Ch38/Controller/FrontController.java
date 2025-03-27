@@ -20,7 +20,7 @@ public class FrontController {
 	}
 	//초기화
 	private void init() {
-		// 인증요청 API(ENPOINT : 서브컨트롤러객체 저장)
+		// 인증요청 API(ENDPOINT : 서브컨트롤러객체 저장)
 		map.put("/user", new UserController());
 	}
 	
@@ -33,3 +33,6 @@ public class FrontController {
 		return controller.execute(params);		 
 	}
 }
+
+
+			
