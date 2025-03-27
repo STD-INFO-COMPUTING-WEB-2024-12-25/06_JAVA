@@ -18,13 +18,17 @@ import java.util.Map;
 import Ch38.Domain.Dto.UserDto;
 
 public class UserController implements SubController{
-
+	
+	Map<String, Object> response;
+	
 	//C(1)R(2)U(3)D(4) + 로그인(5),로그아웃(6)
 	@Override
 	public Map<String, Object> execute(Map<String, Object> params) {
 		System.out.println("[SC] UserController execute invoke..!");
 		//00 
-		Map<String, Object> response = new HashMap();
+		
+		response=new HashMap();
+		
 		Integer serviceNo =(Integer)params.get("serviceNo");
 		if(serviceNo==null) {
 			response.put("status", false);
@@ -44,6 +48,13 @@ public class UserController implements SubController{
 				//02 유효성검증(Data Validation)
 				boolean isOk=isValid(userDto);
 				System.out.println("[No-1 회원가입] : 유효성 검증 확인 : " + isOk);
+				if(!isOk) {
+					response.put("status", false);
+//					response.put("message","유효성 체크 오류발생!");	
+					return response;
+				}
+				
+				
 				//03 관련 서비스 실행
 				//04 뷰로 이동(or 내용전달)
 				break;
@@ -92,9 +103,23 @@ public class UserController implements SubController{
 		return response;
 	}
 	
+	//유효성 검사 함수
 	private boolean isValid(UserDto userDto) {
 		
-		
+		if(userDto.getUserid()==null || userDto.getUserid().length()<=4) {
+			response.put("error","userid의 길이는 최소 5자이상이어야합니다");
+			System.out.println("[INVALID] userid의 길이는 최소 5자이상이어야합니다");
+			return false;
+		}
+		if(userDto.getUserid().matches("^[0-9].*")) {
+			System.out.println("[INVALID] userid의 첫문자로 숫자가 들어올수 없습니다");
+			response.put("error","userid의 userid의 첫문자로 숫자가 들어올수 없습니다");
+			return false;
+		}
+		//NULL 체크 / 데이터(자료)수준에서의 의미있는데이터가 포함되어져있는지 여부
+		//userid 은 첫문자가 숫자인지 여부 - /or 길이가 1글자인지 등등.. 
+		//username 은 첫문자가 숫자인지 여부 - 
+		//password 복잡도체크는 Business Layer 체크(Policy 에 의한 처리) 
 		
 		return true;
 	}

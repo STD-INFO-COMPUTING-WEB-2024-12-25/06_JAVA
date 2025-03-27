@@ -16,8 +16,12 @@ class ControllerTests {
 	void test() {
 		//View에서 요청정보 담기
 		Map<String,Object> params = new HashMap();
-		params.put("endPoint", "/book");//endPoint
-		params.put("serviceNo", 4);	//ServiceNo
+		params.put("endPoint", "/user");//endPoint
+		params.put("serviceNo", 1);	//ServiceNo
+		//회원가입-인자전달
+		params.put("userid","1user555");
+		params.put("username","홍길동");
+		params.put("password","1234");
 		
 		//요청하기
 		Map<String,Object> response =  fc.execute(params);
