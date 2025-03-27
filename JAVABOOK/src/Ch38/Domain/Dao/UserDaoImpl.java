@@ -7,7 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import Ch36.Domain.Dto.UserDto;
+import Ch38.Domain.Dto.UserDto;
+
+
 
 public class UserDaoImpl {
 	//DB Attr
@@ -34,14 +36,48 @@ public class UserDaoImpl {
 	}
 	
 	//CRUD 
-	public int insert(UserDto userDto) {
-		return -1;
+	public int insert(UserDto userDto) throws SQLException {
+		try {
+			pstmt = conn.prepareStatement("insert into tbl_user values(?,?,?,?)");
+			pstmt.setString(1, userDto.getUserid());
+			pstmt.setString(2, userDto.getUsername());
+			pstmt.setString(3, userDto.getPassword());
+			pstmt.setString(4, "ROLE_USER");
+			return pstmt.executeUpdate();
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+			throw new SQLException("USERDAO's INSERT SQL EXCEPTION!!");
+		}finally {
+			try {pstmt.close();}catch(Exception e2) {}
+		}
 	}
-	public int update(UserDto userDto) {
-		return -1;
+	
+	public int update(UserDto userDto) throws SQLException {
+		try {
+			pstmt = conn.prepareStatement("");
+			
+			return pstmt.executeUpdate();
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+			throw new SQLException("USERDAO's UPDATE SQL EXCEPTION!!");
+		}finally {
+			try {pstmt.close();}catch(Exception e2) {}
+		}
 	}
-	public int delete(UserDto userDto) {
-		return -1;
+	public int delete(UserDto userDto) throws SQLException {
+		try {
+			pstmt = conn.prepareStatement("");
+			
+			return pstmt.executeUpdate();
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+			throw new SQLException("USERDAO's DELETE SQL EXCEPTION!!");
+		}finally {
+			try {pstmt.close();}catch(Exception e2) {}
+		}
 	}
 	//단건조회
 	public UserDto select(UserDto userDto) {	
@@ -53,5 +89,6 @@ public class UserDaoImpl {
 	}	
 	
 }
+
 
 
