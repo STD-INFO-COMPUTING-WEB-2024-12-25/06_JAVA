@@ -7,11 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import Ch38.Domain.Dto.BookDto;
 import Ch38.Domain.Dto.UserDto;
 
-
-
-public class UserDaoImpl{
+public class BookDaoImpl {
 	//DB Attr
 	private Connection conn;
 	private PreparedStatement pstmt;
@@ -20,35 +19,35 @@ public class UserDaoImpl{
 	private String id="root";
 	private String pw="1234";
 	private String url="jdbc:mysql://localhost:3306/bookDB";
-	//싱글톤 패턴처리
-	private static UserDaoImpl instance;
-	private UserDaoImpl() throws SQLException, ClassNotFoundException {
-		
+	
+	//싱글톤
+	
+	private static BookDaoImpl instance;
+	private BookDaoImpl() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		conn = DriverManager.getConnection(url,id,pw);
 		System.out.println("UserDaoImpl DB Connection Success");
-		
 	};
-	public static UserDaoImpl getInstance() throws ClassNotFoundException, SQLException {
+	public static BookDaoImpl getInstance() throws ClassNotFoundException, SQLException {
 		if(instance==null)
-			instance = new UserDaoImpl();
+			instance=new BookDaoImpl();
 		return instance;
 	}
 	
 	//CRUD 
- 
-	public int insert(UserDto userDto) throws SQLException {
+	 
+	public int insert(BookDto bookDto) throws SQLException {
 		try {
-			pstmt = conn.prepareStatement("insert into tbl_user values(?,?,?,?)");
-			pstmt.setString(1, userDto.getUserid());
-			pstmt.setString(2, userDto.getUsername());
-			pstmt.setString(3, userDto.getPassword());
-			pstmt.setString(4, "ROLE_USER");
+			pstmt = conn.prepareStatement("insert into tbl_book values(?,?,?,?)");
+			pstmt.setString(1, bookDto.getBookCode());
+			pstmt.setString(2, bookDto.getBookName());
+			pstmt.setString(3, bookDto.getPublisher());
+			pstmt.setString(4, bookDto.getIsbn());
 			return pstmt.executeUpdate();
 			
 		}catch(SQLException e) {
 			e.printStackTrace();
-			throw new SQLException("USERDAO's INSERT SQL EXCEPTION!!");
+			throw new SQLException("BOOKDAO's INSERT SQL EXCEPTION!!");
 		}finally {
 			try {pstmt.close();}catch(Exception e2) {}
 		}
@@ -63,7 +62,7 @@ public class UserDaoImpl{
 			
 		}catch(SQLException e) {
 			e.printStackTrace();
-			throw new SQLException("USERDAO's UPDATE SQL EXCEPTION!!");
+			throw new SQLException("BOOKDAO's UPDATE SQL EXCEPTION!!");
 		}finally {
 			try {pstmt.close();}catch(Exception e2) {}
 		}
@@ -77,7 +76,7 @@ public class UserDaoImpl{
 			
 		}catch(SQLException e) {
 			e.printStackTrace();
-			throw new SQLException("USERDAO's DELETE SQL EXCEPTION!!");
+			throw new SQLException("BOOKDAO's DELETE SQL EXCEPTION!!");
 		}finally {
 			try {pstmt.close();}catch(Exception e2) {}
 		}
@@ -92,8 +91,9 @@ public class UserDaoImpl{
 	public List<UserDto> selectAll() {	
 		return null;
 	}	
-	
+
 }
+
 
 
 
