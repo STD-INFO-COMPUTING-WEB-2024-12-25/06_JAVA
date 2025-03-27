@@ -1,0 +1,25 @@
+package Ch38.Tests.Dao;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.sql.SQLException;
+
+import org.junit.jupiter.api.Test;
+
+import Ch38.Domain.Dao.UserDaoImpl;
+
+class DaoTests {
+
+	@Test
+	void test1() throws ClassNotFoundException, SQLException {
+		
+		UserDaoImpl userDaoImpl = UserDaoImpl.getInstance();
+	}
+
+	
+	
+	@Test
+	void test2() {
+		
+	}
+}
