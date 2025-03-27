@@ -16,7 +16,7 @@ class ControllerTests {
 	void test() {
 		//View에서 요청정보 담기
 		Map<String,Object> params = new HashMap();
-		params.put("endPoint", "/user");//endPoint
+		params.put("endPoint", "/book");//endPoint
 		params.put("serviceNo", 4);	//ServiceNo
 		
 		//요청하기

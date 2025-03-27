@@ -15,6 +15,8 @@ import java.util.HashMap;
 
 import java.util.Map;
 
+import Ch38.Domain.Dto.UserDto;
+
 public class UserController implements SubController{
 
 	//C(1)R(2)U(3)D(4) + 로그인(5),로그아웃(6)
@@ -32,8 +34,16 @@ public class UserController implements SubController{
 		switch(serviceNo) {
 			case 1:			//C - 회원가입
 				System.out.println("[SC] 회원가입 요청 확인");
-				//01 파라미터받기
+				//01 파라미터받기	
+				String userid = (params.get("userid")!=null)?(String)params.get("userid"):null;
+				String username = (params.get("username")!=null)?(String)params.get("username"):null;
+				String password = (params.get("password")!=null)?(String)params.get("password"):null;
+				String role = "ROLE_USER";	//기본값 
+				UserDto userDto = new UserDto(userid,username,password,role);
+				
 				//02 유효성검증(Data Validation)
+				boolean isOk=isValid(userDto);
+				System.out.println("[No-1 회원가입] : 유효성 검증 확인 : " + isOk);
 				//03 관련 서비스 실행
 				//04 뷰로 이동(or 내용전달)
 				break;
@@ -80,6 +90,13 @@ public class UserController implements SubController{
 
 		
 		return response;
+	}
+	
+	private boolean isValid(UserDto userDto) {
+		
+		
+		
+		return true;
 	}
 
 }
