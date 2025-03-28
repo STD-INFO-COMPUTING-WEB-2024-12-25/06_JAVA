@@ -24,7 +24,6 @@ class ServiceTests {
 
 	
 	@Test
-	
 	void test_2() throws Exception {
 		BookServiceImpl bookService = BookServiceImpl.getInstance();
 		bookService.bookRegistration(new BookDto("1010101","C언어기본","코리아미디어","1010-1010"));
