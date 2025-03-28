@@ -14,16 +14,16 @@ class ServiceTests {
 
 	
 	@Test
-	@Disabled
 	void test() throws Exception {
 
 		UserServiceImpl userService=UserServiceImpl.getInstance();
+		userService.userJoin(null);
+//		userService.userJoin(new UserDto("bbb","남길동","1234","ROLE_USER"));
 		
-		userService.userJoin(new UserDto("bbb","남길동","1234","ROLE_USER"));
 	}
-
 	
 	@Test
+	@Disabled
 	void test_2() throws Exception {
 		BookServiceImpl bookService = BookServiceImpl.getInstance();
 		bookService.bookRegistration(new BookDto("1010101","C언어기본","코리아미디어","1010-1010"));
