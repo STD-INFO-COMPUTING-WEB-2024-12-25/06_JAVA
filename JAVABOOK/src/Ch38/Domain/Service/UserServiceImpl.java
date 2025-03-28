@@ -13,18 +13,18 @@ public class UserServiceImpl {
 	
 	//싱글톤 패턴
 	private static UserServiceImpl instance;
-	private UserServiceImpl() throws ClassNotFoundException, SQLException {
+	private UserServiceImpl() throws Exception {
 		userDao = UserDaoImpl.getInstance();
 		System.out.println("[SERVICE] UserServiceImpl init...");
 	};
-	public static UserServiceImpl getInstance() throws ClassNotFoundException, SQLException {
+	public static UserServiceImpl getInstance() throws Exception {
 		if(instance==null)
 			instance = new UserServiceImpl();
 		return instance ;
 	}
 	
 	//회원가입(+TX처리필요)
-	public boolean userJoin(UserDto userDto) throws SQLException{
+	public boolean userJoin(UserDto userDto) throws Exception{
 		
 		return  userDao.insert(userDto)>0;
 		

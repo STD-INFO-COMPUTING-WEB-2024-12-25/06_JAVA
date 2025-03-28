@@ -12,11 +12,11 @@ import Ch38.Domain.Dto.UserDto;
 
 
 
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl extends Dao implements UserDao{
 	//DB Attr
 //	private Connection conn;
-	private PreparedStatement pstmt;
-	private ResultSet rs;
+//	private PreparedStatement pstmt;
+//	private ResultSet rs;
 //	
 //	private String id="root";
 //	private String pw="1234";
@@ -24,22 +24,22 @@ public class UserDaoImpl implements UserDao{
 	
 	
 	//CONNECTION POOL 
-	private ConnectionPool connectionPool;
-	private ConnectionItem connectionItem;
+//	private ConnectionPool connectionPool;
+//	private ConnectionItem connectionItem;
 	
 	
 	//싱글톤 패턴처리
 	private static UserDao instance;
-	private UserDaoImpl() throws SQLException, ClassNotFoundException {
+	private UserDaoImpl() throws Exception {
 		System.out.println("[DAO] UserDaoImpl init...");
 //		Class.forName("com.mysql.cj.jdbc.Driver");
 //		conn = DriverManager.getConnection(url,id,pw);
 //		System.out.println("UserDaoImpl DB Connection Success");
-		connectionPool =ConnectionPool.getInstance();
+//		connectionPool =ConnectionPool.getInstance();
 		
 		
 	};
-	public static UserDao getInstance() throws ClassNotFoundException, SQLException {
+	public static UserDao getInstance() throws Exception {
 		if(instance==null)
 			instance = new UserDaoImpl();
 		return instance;

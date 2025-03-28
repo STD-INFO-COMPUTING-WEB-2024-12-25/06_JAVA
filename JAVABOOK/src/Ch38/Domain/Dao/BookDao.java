@@ -8,7 +8,7 @@ import Ch38.Domain.Dto.UserDto;
 
 public interface BookDao {
 
-	int insert(BookDto bookDto) throws SQLException;
+	int insert(BookDto bookDto) throws Exception;
 
 	int update(UserDto userDto) throws SQLException;
 

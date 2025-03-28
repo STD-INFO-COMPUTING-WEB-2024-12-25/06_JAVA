@@ -16,20 +16,19 @@ class DaoTests {
 
 	@Test
 	@Disabled
-	void test1() throws ClassNotFoundException, SQLException {
+	void test1() throws Exception {
 		
 		UserDao userDaoImpl = UserDaoImpl.getInstance();
 	}
 	
 	@Test
-	@Disabled
 	void test2() throws Exception {
 		UserDao userDaoImpl = UserDaoImpl.getInstance();
-		userDaoImpl.insert(new UserDto("aaa","홍길동","1234",""));
+		userDaoImpl.insert(new UserDto("aabbccc","홍길동12","12341212",""));
 	}
 	
 	@Test
-	
+	@Disabled
 	void test3() throws Exception {
 		BookDao bookDaoImpl = BookDaoImpl.getInstance();
 		bookDaoImpl.insert(new BookDto("1111","리눅스다","한빛미디어","111-111"));

@@ -15,7 +15,7 @@ class ServiceTests {
 	
 	@Test
 	@Disabled
-	void test() throws ClassNotFoundException, SQLException {
+	void test() throws Exception {
 
 		UserServiceImpl userService=UserServiceImpl.getInstance();
 		
