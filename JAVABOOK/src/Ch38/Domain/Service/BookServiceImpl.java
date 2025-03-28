@@ -1,12 +1,13 @@
 package Ch38.Domain.Service;
 
+import Ch38.Domain.Dao.BookDao;
 import Ch38.Domain.Dao.BookDaoImpl;
 import Ch38.Domain.Dto.BookDto;
 
 public class BookServiceImpl {
 
 	//
-	private BookDaoImpl bookDao;
+	private BookDao bookDao;
 	
 	//싱글톤 패턴
 	private static BookServiceImpl instance;

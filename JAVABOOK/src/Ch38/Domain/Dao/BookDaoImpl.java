@@ -10,7 +10,7 @@ import java.util.List;
 import Ch38.Domain.Dto.BookDto;
 import Ch38.Domain.Dto.UserDto;
 
-public class BookDaoImpl {
+public class BookDaoImpl implements BookDao {
 	//DB Attr
 	private Connection conn;
 	private PreparedStatement pstmt;
@@ -22,13 +22,13 @@ public class BookDaoImpl {
 	
 	//싱글톤
 	
-	private static BookDaoImpl instance;
+	private static BookDao instance;
 	private BookDaoImpl() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		conn = DriverManager.getConnection(url,id,pw);
 		System.out.println("UserDaoImpl DB Connection Success");
 	};
-	public static BookDaoImpl getInstance() throws ClassNotFoundException, SQLException {
+	public static BookDao getInstance() throws ClassNotFoundException, SQLException {
 		if(instance==null)
 			instance=new BookDaoImpl();
 		return instance;
@@ -36,6 +36,7 @@ public class BookDaoImpl {
 	
 	//CRUD 
 	 
+	@Override
 	public int insert(BookDto bookDto) throws SQLException {
 		try {
 			pstmt = conn.prepareStatement("insert into tbl_book values(?,?,?,?)");
@@ -54,6 +55,7 @@ public class BookDaoImpl {
 	}
 	
  
+	@Override
 	public int update(UserDto userDto) throws SQLException {
 		try {
 			pstmt = conn.prepareStatement("");
@@ -68,6 +70,7 @@ public class BookDaoImpl {
 		}
 	}
  
+	@Override
 	public int delete(UserDto userDto) throws SQLException {
 		try {
 			pstmt = conn.prepareStatement("");
@@ -83,11 +86,13 @@ public class BookDaoImpl {
 	}
 	//단건조회
  
+	@Override
 	public UserDto select(UserDto userDto) {	
 		return null;
 	}
 	//다건조회
  
+	@Override
 	public List<UserDto> selectAll() {	
 		return null;
 	}	

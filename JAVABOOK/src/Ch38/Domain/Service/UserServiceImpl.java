@@ -2,13 +2,14 @@ package Ch38.Domain.Service;
 
 import java.sql.SQLException;
 
+import Ch38.Domain.Dao.UserDao;
 import Ch38.Domain.Dao.UserDaoImpl;
 import Ch38.Domain.Dto.UserDto;
 
 public class UserServiceImpl {
 	
 	//
-	private UserDaoImpl userDao ;
+	private UserDao userDao ;
 	
 	//싱글톤 패턴
 	private static UserServiceImpl instance;
