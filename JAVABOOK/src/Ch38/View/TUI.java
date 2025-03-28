@@ -1,7 +1,6 @@
 package Ch38.View;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -13,10 +12,11 @@ import Ch38.Controller.FrontController;
 
 public class TUI {
 
-
+	//사용자의 상태정보
 	private String userid; // UserId
-	private String username; // UserId
+	private String username; // Username
 	private String role;
+	
 	private Scanner sc = new Scanner(System.in);
 
 	private FrontController controller;
@@ -60,12 +60,27 @@ public class TUI {
 		System.out.println("--------------------------");
 		System.out.println("회원정보 입력");
 		System.out.println("--------------------------");
-		System.out.print("ID : ");
+		System.out.print("USERID : ");
 		String id = sc.next();
-		System.out.print("PW : ");
+		System.out.print("USERNAME : ");
+		String name = sc.next();
+		System.out.print("PASSWORD: ");
 		String pw = sc.next();
 		
 		//요청처리
+		Map<String,Object> params = new HashMap();
+		params.put("endPoint", "/user");
+		params.put("serviceNo", 1);
+		params.put("userid", id);
+		params.put("username", name);
+		params.put("password", pw);
+		
+		Map<String,Object> response  = controller.execute(params);
+		
+		for(String key : response.keySet())
+			System.out.println(key + " : " + response.get(key));
+		
+		
 	}
 	
 	
@@ -102,7 +117,7 @@ public class TUI {
 
 				break;
 			case 2:
-				
+				BookMenu();
 				break;
 			case 3:
 				break;
@@ -155,7 +170,7 @@ public class TUI {
 		System.out.println("도서 정보 입력");
 		System.out.println("--------------------------");
 		System.out.printf("도서코드 도서명 출판사 ISBN순으로 입력 : ");
-		int bookcode = sc.nextInt();
+		String bookcode = sc.next();
 		String bookname = sc.next();
 		String publisher = sc.next();
 		String isbn = sc.next();
