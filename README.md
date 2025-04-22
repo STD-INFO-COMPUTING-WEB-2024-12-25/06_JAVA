@@ -1,3 +1,14 @@
+```mermaid
+graph TD
+    A[사용자] --> B[웹 브라우저]
+    B --> C[프론트엔드 (React)]
+    C --> D[백엔드 (Spring Boot)]
+    D --> E[(DB)]
+    D --> F[외부 API]
+```
+
+
+
 # 05_PROGRAMMING_01_02
 프로그래밍 언어 활용  / 프로그래밍 언어 응용<br>
 
